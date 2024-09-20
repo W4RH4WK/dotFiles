@@ -1,0 +1,115 @@
+@define-color on #82aaff;
+@define-color off #403e41;
+@define-color good #c3e88d;
+@define-color warn #ffcb6b;
+@define-color bad #ff5370;
+
+* {
+  color: white;
+  font-family: "Ubuntu Nerd Font";
+  font-size: 20px;
+  font-weight: 300;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#tags {
+  margin-left: 12px;
+}
+#clock {
+  margin-right: 12px;
+}
+
+#tags button {
+  font-weight: normal;
+  padding: 0 12px;
+  border-bottom: 2px solid @off;
+  opacity: 0.0;
+}
+#tags button:hover,
+#tags button.occupied {
+  opacity: 1.0;
+}
+#tags button.focused {
+  border-bottom-color: @on;
+  opacity: 1.0;
+}
+
+#clock {
+  font-weight: normal;
+  padding: 0 12px;
+  border-bottom: 2px solid @off;
+}
+
+#mpd {
+  padding: 0 12px;
+  border-bottom: 2px solid @off;
+}
+#mpd.playing {
+  border-bottom-color: @on;
+}
+
+#bluetooth {
+  padding: 0 12px;
+  border-bottom: 2px solid @off;
+}
+#bluetooth.on {
+  border-bottom-color: @warn;
+}
+#bluetooth.discoverable,
+#bluetooth.pairable {
+  border-bottom-color: @warn;
+}
+#bluetooth.connected {
+  border-bottom-color: @good;
+}
+
+#network {
+  padding: 0 12px;
+  border-bottom: 2px solid @off;
+}
+#network.ethernet,
+#network.wifi, 
+#network.linked {
+  border-bottom-color: @good;
+}
+
+#battery {
+  padding: 0 12px;
+  border-bottom: 2px solid @on;
+}
+#battery.discharging {
+  border-bottom-color: @good;
+}
+#battery.discharging.warning {
+  border-bottom-color: @warn;
+}
+#battery.discharging.critical {
+  border-bottom-color: @bad;
+}
+
+#power-profiles-daemon {
+  padding: 0 12px;
+  border-bottom: 2px solid @good;
+}
+#power-profiles-daemon.balanced {
+  border-bottom-color: @warn;
+}
+#power-profiles-daemon.performance {
+  border-bottom-color: @bad;
+}
+
+#pulseaudio {
+  padding: 0 12px;
+  border-bottom: 2px solid @good;
+}
+#pulseaudio.muted {
+  border-bottom-color: @off;
+}
+
+#tray {
+  padding: 0 12px;
+  border-bottom: 2px solid @off;
+}

@@ -1,0 +1,111 @@
+{
+    "position": "bottom",
+    "height": 42,
+    "spacing": 42,
+    "modules-left": [
+        "river/tags",
+        "mpd",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "bluetooth",
+        "network#eth",
+        "network#wifi",
+        "battery",
+        "power-profiles-daemon",
+        "pulseaudio",
+        "tray",
+        "clock",
+    ],
+    "mpd": {
+        "format": "{stateIcon} {artist} - {title}",
+        "format-stopped": " Stopped",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "state-icons": {
+            "playing": "",
+            "paused": "",
+        },
+        "tooltip": false,
+        "on-click": "alacritty --command ncmpcpp",
+    },
+    "tray": {
+        "icon-size": 24,
+        "spacing": 16,
+        "reverse-direction": true,
+    },
+    "clock": {
+        "tooltip-format": "<b>{:%Y-%m-%d}</b>\n<tt>{calendar}</tt>",
+        "format-alt": "{:%H:%M}",
+        "calendar": {
+            "format": {
+                "today": "<b>{}</b>",
+            },
+        },
+    },
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10,
+        },
+        "format": "{icon}   {capacity}%",
+        "format-full": "{icon}   {capacity}%",
+        "format-charging": "󰚥   {capacity}%",
+        "format-plugged": "󰚥   {capacity}%",
+        "format-alt": "{icon}   {time}",
+        "format-time": "{H}h{M}m",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "format-icons": {
+        "default": "󰓅",
+        "performance": "󰓅",
+        "balanced": "󰾅",
+        "power-saver": "󰾆",
+      },
+      "tooltip": true,
+      "tooltip-format": "{profile} ({driver})",
+    },
+    "bluetooth": {
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+        "on-click": "alacritty --command bluetuith",
+    },
+    "network#eth": {
+        "interface": "enp1s0",
+        "format": "󰈀   {ipaddr}",
+        "format-ethernet": "󰈀   {ipaddr}",
+        "format-linked": "󰈀   {ifname}",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}",
+    },
+    "network#wifi": {
+        "interface": "wlp170s0",
+        "format": "󰈀   {ipaddr}",
+        "format-wifi": "   {ipaddr}",
+        "format-disconnected": "󰌙   disconnected",
+        "tooltip-format": "{ifname}",
+    },
+    "pulseaudio": {
+        "format": "{format_source} {icon}   {volume}%",
+        "format-muted": "{format_source}  ",
+        "format-bluetooth": " {format_source} {icon}   {volume}%",
+        "format-bluetooth-muted": " {format_source}  ",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "󰄋",
+            "default": ["", "", ""],
+        },
+        //"on-click": "pavucontrol",
+        "on-click": "alacritty --command pulsemixer",
+    }
+}

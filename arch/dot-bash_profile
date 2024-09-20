@@ -1,0 +1,23 @@
+#
+# ~/.bash_profile
+#
+
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+	export ADW_DISABLE_PORTAL=1
+	export QT_QPA_PLATFORM=wayland
+	export QT_QPA_PLATFORMTHEME=kde
+	export MOZ_ENABLE_WAYLAND=1
+	export MOZ_WEBRENDER=1
+	#export KDE_SESSION_VERSION=6
+	#export KDE_FULL_SESSION=true
+	export GTK_USE_PORTAL=1
+
+	export XDG_SESSION_TYPE=wayland
+	export XDG_CURRENT_DESKTOP=river
+
+	export BEMENU_OPTS="--fn 'Cascadia Code 14' --ch 32 --hp 16 --border 8 --bdr '#121212' --prompt '>'"
+
+	exec river
+fi
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

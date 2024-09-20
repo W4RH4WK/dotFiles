@@ -1,0 +1,121 @@
+#!/bin/bash
+
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+riverctl map normal Super Return spawn alacritty
+riverctl map normal Super E spawn nemo
+riverctl map normal Super R spawn bemenu-run
+riverctl map normal Super Period spawn 'bemoji -t'
+riverctl map normal Super U spawn 'dunstctl close'
+riverctl map normal Super+Shift U spawn 'dunstctl history-pop'
+
+riverctl map normal None Print spawn 'slurp | grim -g - - | wl-copy'
+riverctl map normal Super Print spawn 'grim ~/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)'
+
+riverctl map normal Super Q close
+
+riverctl map normal Super Delete spawn 'loginctl lock-session'
+riverctl map normal Super+Shift Delete exit
+
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+
+riverctl map normal Super O focus-output next
+riverctl map normal Super I focus-output previous
+
+riverctl map normal Super+Shift O send-to-output next
+riverctl map normal Super+Shift I send-to-output previous
+
+riverctl map normal Super M zoom
+
+riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+
+riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+for i in {1..9}; do
+    tags=$((1 << ($i - 1)))
+    riverctl map normal Super $i set-focused-tags $tags
+    riverctl map normal Super+Shift $i set-view-tags $tags
+    riverctl map normal Super+Control $i toggle-focused-tags $tags
+    riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
+riverctl map normal Super Tab focus-previous-tags
+
+riverctl map normal Super N toggle-float
+
+riverctl map normal Super F toggle-fullscreen
+
+riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked; do
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+
+    riverctl map $mode None XF86AudioMedia spawn 'mpc toggle'
+    riverctl map $mode None XF86AudioPlay  spawn 'mpc toggle'
+    riverctl map $mode None XF86AudioPrev  spawn 'mpc prev'
+    riverctl map $mode None XF86AudioNext  spawn 'mpc next'
+
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+done
+
+riverctl border-width 1
+riverctl background-color 0x121212
+riverctl border-color-focused 0x93a1a1
+riverctl border-color-unfocused 0x586e75
+
+riverctl set-repeat 50 300
+
+riverctl rule-add -app-id 'float*' float
+
+riverctl default-attach-mode below
+riverctl focus-follows-cursor normal
+
+riverctl default-layout rivertile
+rivertile -view-padding 4 -outer-padding 0 &
+
+#riverctl default-layout wideriver
+#wideriver &
+
+#riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' 'us(altgr-intl)'
+riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:super' 'us(altgr-intl)'
+
+riverctl input '*Touchpad' tap enabled
+riverctl input '*Touchpad' drag-lock enabled
+riverctl xcursor-theme Breeze_Light 32
+
+swaybg --image ~/Pictures/Wallpapers/wallpaper --mode fill &
+
+waybar &
+dunst &
+nm-applet &
+#blueman-applet &
+
+swayidle -w \
+    lock 'ssh-add -D' \
+    lock swaylock \
+    before-sleep swaylock &
+
+#wlr-randr --output eDP-1 --scale 1.5 &

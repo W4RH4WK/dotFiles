@@ -1,0 +1,50 @@
+[user]
+	name = Alex Hirsch
+	email = w4rh4wk@bluephoenix.at
+[github]
+	user = w4rh4wk
+[core]
+	editor = nvim
+[log]
+	date = iso
+[color]
+	ui = true
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+	tool = nvim
+[difftool "nvim"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim -d -c '$wincmd w' -c 'wincmd J' \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[fetch]
+	prune = true
+	prunetags = true
+[pull]
+	ff = only
+[push]
+	followtags = true
+	autoSetupRemote = true
+[rebase]
+	autosquash = true
+	updateRefs = true
+[alias]
+	c = checkout
+	co = commit
+	d = diff
+	ds = diff --staged
+	l = log --all --graph --oneline --decorate
+	s = status --short --branch
+	ff = merge --ff-only
+	mnc = merge --no-ff --no-commit
+	purr = pull --rebase
+	pushf = push --force-with-lease
+	ignore = update-index --skip-worktree
+	unignore = update-index --skip-worktree
+	ignored = !git ls-files -v | grep '^[[:lower:]]'
+[tig "bind"]
+	main = = !git commit --fixup=%(commit)
+	main = <Ctrl-R> !git rebase --autosquash -i %(commit)
