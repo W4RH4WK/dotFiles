@@ -32,12 +32,6 @@ riverctl map normal Super+Shift I send-to-output previous
 
 riverctl map normal Super M zoom
 
-riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
-
-riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
-
 riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
@@ -59,11 +53,6 @@ riverctl map normal Super Tab focus-previous-tags
 riverctl map normal Super N toggle-float
 
 riverctl map normal Super F toggle-fullscreen
-
-riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
-riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
-riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
-riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
 
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
@@ -93,11 +82,47 @@ riverctl rule-add -app-id 'float*' float
 riverctl default-attach-mode below
 riverctl focus-follows-cursor normal
 
-riverctl default-layout rivertile
-rivertile -view-padding 4 -outer-padding 0 &
+if [[ -f /usr/bin/wideriver ]]; then
+    riverctl map normal Super H send-layout-cmd wideriver "--ratio -0.05"
+    riverctl map normal Super L send-layout-cmd wideriver "--ratio +0.05"
 
-#riverctl default-layout wideriver
-#wideriver &
+    riverctl map normal Super+Shift H send-layout-cmd wideriver "--count +1"
+    riverctl map normal Super+Shift L send-layout-cmd wideriver "--count -1"
+
+    riverctl map normal Super Up    send-layout-cmd wideriver "--layout monocle"
+    riverctl map normal Super Right send-layout-cmd wideriver "--layout right"
+    riverctl map normal Super Down  send-layout-cmd wideriver "--layout wide"
+    riverctl map normal Super Left  send-layout-cmd wideriver "--layout left"
+    riverctl map normal Super Space send-layout-cmd wideriver "--layout-toggle"
+
+    riverctl map normal Super Slash send-layout-cmd wideriver "--stack diminish"
+    riverctl map normal Super+Shift Slash send-layout-cmd wideriver "--stack even"
+
+    riverctl default-layout wideriver
+    wideriver \
+        --ratio 0.6 \
+        --stack diminish \
+        --border-width 1 \
+        --inner-gaps 4 \
+        --outer-gaps 4 \
+        --smart-gaps \
+        --border-width-monocle 0 \
+        --border-width-smart-gaps 0 &
+else
+    riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+    riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+
+    riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
+    riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+
+    riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
+    riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+    riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
+    riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
+
+    riverctl default-layout rivertile
+    rivertile -view-padding 4 -outer-padding 0 &
+fi
 
 #riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' 'us(altgr-intl)'
 riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:super' 'us(altgr-intl)'
