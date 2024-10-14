@@ -18,6 +18,9 @@
         "tray",
         "clock",
     ],
+    "river/tags": {
+        "tag-labels": ["󰭹", "󰈹", "", "4", "5", "6", "7", "8", "9"],
+    },
     "mpd": {
         "format": "{stateIcon} {artist} - {title}",
         "format-stopped": " Stopped",
@@ -80,6 +83,7 @@
         "format-ethernet": "󰈀   {ipaddr}",
         "format-linked": "󰈀   {ifname}",
         "format-disconnected": "",
+        "format-disabled": "",
         "tooltip-format": "{ifname}",
     },
     "network#wifi": {

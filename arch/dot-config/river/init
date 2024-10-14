@@ -50,9 +50,9 @@ riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
 riverctl map normal Super Tab focus-previous-tags
 
-riverctl map normal Super N toggle-float
+riverctl map normal Super F toggle-float
 
-riverctl map normal Super F toggle-fullscreen
+riverctl map normal Super+Shift Space toggle-fullscreen
 
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
@@ -89,11 +89,14 @@ if [[ -f /usr/bin/wideriver ]]; then
     riverctl map normal Super+Shift H send-layout-cmd wideriver "--count +1"
     riverctl map normal Super+Shift L send-layout-cmd wideriver "--count -1"
 
+    riverctl map normal Super Space send-layout-cmd wideriver "--layout monocle"
+    riverctl map normal Super N send-layout-cmd wideriver "--layout left"
+    riverctl map normal Super+Shift N send-layout-cmd wideriver "--layout wide"
+
     riverctl map normal Super Up    send-layout-cmd wideriver "--layout monocle"
     riverctl map normal Super Right send-layout-cmd wideriver "--layout right"
     riverctl map normal Super Down  send-layout-cmd wideriver "--layout wide"
     riverctl map normal Super Left  send-layout-cmd wideriver "--layout left"
-    riverctl map normal Super Space send-layout-cmd wideriver "--layout-toggle"
 
     riverctl map normal Super Slash send-layout-cmd wideriver "--stack diminish"
     riverctl map normal Super+Shift Slash send-layout-cmd wideriver "--stack even"
