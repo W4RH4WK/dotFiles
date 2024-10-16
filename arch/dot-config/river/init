@@ -20,9 +20,13 @@ riverctl map normal Super+Shift Delete exit
 
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
+riverctl map normal Super H focus-view left
+riverctl map normal Super L focus-view right
 
 riverctl map normal Super+Shift J swap next
 riverctl map normal Super+Shift K swap previous
+riverctl map normal Super+Shift H swap left
+riverctl map normal Super+Shift L swap right
 
 riverctl map normal Super O focus-output next
 riverctl map normal Super I focus-output previous
@@ -83,11 +87,11 @@ riverctl default-attach-mode below
 riverctl focus-follows-cursor normal
 
 if [[ -f /usr/bin/wideriver ]]; then
-    riverctl map normal Super H send-layout-cmd wideriver "--ratio -0.05"
-    riverctl map normal Super L send-layout-cmd wideriver "--ratio +0.05"
+    riverctl map normal Super Bracketleft send-layout-cmd wideriver "--ratio -0.05"
+    riverctl map normal Super Bracketright send-layout-cmd wideriver "--ratio +0.05"
 
-    riverctl map normal Super+Shift H send-layout-cmd wideriver "--count +1"
-    riverctl map normal Super+Shift L send-layout-cmd wideriver "--count -1"
+    riverctl map normal Super+Shift Bracketleft send-layout-cmd wideriver "--count +1"
+    riverctl map normal Super+Shift Bracketright send-layout-cmd wideriver "--count -1"
 
     riverctl map normal Super Space send-layout-cmd wideriver "--layout monocle"
     riverctl map normal Super N send-layout-cmd wideriver "--layout left"
@@ -112,11 +116,11 @@ if [[ -f /usr/bin/wideriver ]]; then
         --border-width-monocle 0 \
         --border-width-smart-gaps 0 &
 else
-    riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-    riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+    riverctl map normal Super Bracketleft send-layout-cmd rivertile "main-ratio -0.05"
+    riverctl map normal Super Bracketright send-layout-cmd rivertile "main-ratio +0.05"
 
-    riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
-    riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+    riverctl map normal Super+Shift Bracketleft send-layout-cmd rivertile "main-count +1"
+    riverctl map normal Super+Shift Bracketright send-layout-cmd rivertile "main-count -1"
 
     riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
     riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
