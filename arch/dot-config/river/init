@@ -4,11 +4,13 @@ systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 riverctl map normal Super Return spawn alacritty
-riverctl map normal Super E spawn nemo
 riverctl map normal Super R spawn bemenu-run
-riverctl map normal Super Period spawn 'bemoji -t'
+riverctl map normal Super E spawn nemo
+riverctl map normal Super C spawn gnome-calculator
+riverctl map normal Super Backslash spawn catfish
 riverctl map normal Super U spawn 'dunstctl close'
 riverctl map normal Super+Shift U spawn 'dunstctl history-pop'
+riverctl map normal Super Period spawn 'bemoji -t'
 
 riverctl map normal None Print spawn 'slurp | grim -g - - | wl-copy'
 riverctl map normal Super Print spawn 'grim ~/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)'

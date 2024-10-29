@@ -78,7 +78,7 @@
         "on-click": "alacritty --command bluetuith",
     },
     "network#eth": {
-        "interface": "enp1s0",
+        "interface": "enp0s13f0u4",
         "format": "󰈀   {ipaddr}",
         "format-ethernet": "󰈀   {ipaddr}",
         "format-linked": "󰈀   {ifname}",

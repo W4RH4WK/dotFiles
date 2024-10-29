@@ -20,7 +20,7 @@ source_if_exists /usr/share/git/completion/git-prompt.sh
 
 __ret_ps1() {
 	if [[ $1 != 0 ]]; then
-		echo -n " $1"
+		echo -n "$1 "
 	fi
 }
 
@@ -55,7 +55,7 @@ __set_ps1() {
 	local BCyan='\[\e[1;36m\]'
 	local BWhite='\[\e[1;37m\]'
 
-	PS1="$Blue\$(__hostname_ps1)$BBlue\w$BYellow\$(__git_ps1)$BRed\$(__ret_ps1 \$?)$BGreen \$(__jobs_ps1 \j)> $NC"
+	PS1="$BRed\$(__ret_ps1 \$?)$Blue\$(__hostname_ps1)$BBlue\w$BYellow\$(__git_ps1)$BGreen \$(__jobs_ps1 \j)> $NC"
 	PS2="$BGreen> $NC"
 }
 
