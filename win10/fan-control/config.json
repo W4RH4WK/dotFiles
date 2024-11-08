@@ -1,0 +1,563 @@
+{
+  "__VERSION__": "137",
+  "Main": {
+    "Controls": [
+      {
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/0",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 0,
+        "MatchingFanSensor": null,
+        "Name": "CPU Fan",
+        "NickName": "CPU Fan 1",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "MaximumTemperature": 120,
+          "MinimumTemperature": 20,
+          "Name": "Graph",
+          "OneWayHysteresis": true,
+          "Points": [
+            "20,0",
+            "70,50",
+            "90,100"
+          ],
+          "SelectedHysteresis": 2.0,
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "/amdcpu/0/temperature/2",
+            "IsHidden": false,
+            "Name": "Core (Tctl/Tdie)",
+            "NickName": "Core (Tctl/Tdie)"
+          }
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/1",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 0,
+        "MatchingFanSensor": null,
+        "Name": "Pump Fan",
+        "NickName": "CPU Fan 2",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "Name": "CPU Sync",
+          "SelectedControl": {
+            "Enable": true,
+            "ForceApply": false,
+            "Identifier": "/lpc/nct6687d/control/0",
+            "IsHidden": false,
+            "ManualControl": false,
+            "ManualControlValue": 0,
+            "MatchingFanSensor": null,
+            "Name": "CPU Fan",
+            "NickName": "CPU Fan 1",
+            "SelectedCommandStepDown": 8.0,
+            "SelectedCommandStepUp": 8.0,
+            "SelectedFanCurve": {
+              "MaximumTemperature": 120,
+              "MinimumTemperature": 20,
+              "Name": "Graph",
+              "OneWayHysteresis": true,
+              "Points": [
+                "20,0",
+                "70,50",
+                "90,100"
+              ],
+              "SelectedHysteresis": 2.0,
+              "SelectedResponseTime": 1,
+              "SelectedTempSource": {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              }
+            },
+            "SelectedOffset": 0,
+            "SelectedStart": 0,
+            "SelectedStop": 0
+          },
+          "SelectedOffset": 0
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "NVApiWrapper/256/control/0",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 100,
+        "MatchingFanSensor": {
+          "Identifier": "NVApiWrapper/256/fan/0",
+          "IsHidden": false,
+          "Name": "Fan 1 - NVIDIA GeForce RTX 4080",
+          "NickName": "GPU 1"
+        },
+        "Name": "Control 1 - NVIDIA GeForce RTX 4080",
+        "NickName": "GPU 1",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "MaximumFanSpeed": 100,
+          "MaximumTemperature": 80.0,
+          "MinimumFanSpeed": 40,
+          "MinimumTemperature": 50.0,
+          "Name": "Front",
+          "OneWayHysteresis": false,
+          "SelectedHysteresis": 2.0,
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/max(CPU, GPU)",
+            "Name": "max(CPU, GPU)",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "NVApiWrapper/256/sensor/0",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "NVApiWrapper/256/control/1",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MatchingFanSensor": {
+          "Identifier": "NVApiWrapper/256/fan/1",
+          "IsHidden": false,
+          "Name": "Fan 2 - NVIDIA GeForce RTX 4080",
+          "NickName": "GPU 2"
+        },
+        "Name": "Control 2 - NVIDIA GeForce RTX 4080",
+        "NickName": "GPU 2",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "MaximumFanSpeed": 100,
+          "MaximumTemperature": 80.0,
+          "MinimumFanSpeed": 40,
+          "MinimumTemperature": 50.0,
+          "Name": "Front",
+          "OneWayHysteresis": false,
+          "SelectedHysteresis": 2.0,
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/max(CPU, GPU)",
+            "Name": "max(CPU, GPU)",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "NVApiWrapper/256/sensor/0",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/2",
+        "IsHidden": true,
+        "ManualControl": true,
+        "ManualControlValue": 0,
+        "MatchingFanSensor": null,
+        "Name": "System Fan #1",
+        "NickName": "System Fan #1",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/3",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 0,
+        "MatchingFanSensor": null,
+        "Name": "System Fan #2",
+        "NickName": "Front 1",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "MaximumFanSpeed": 100,
+          "MaximumTemperature": 80.0,
+          "MinimumFanSpeed": 40,
+          "MinimumTemperature": 50.0,
+          "Name": "Front",
+          "OneWayHysteresis": false,
+          "SelectedHysteresis": 2.0,
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/max(CPU, GPU)",
+            "Name": "max(CPU, GPU)",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "NVApiWrapper/256/sensor/0",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/4",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 0,
+        "MatchingFanSensor": null,
+        "Name": "System Fan #3",
+        "NickName": "Front 2",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "MaximumFanSpeed": 100,
+          "MaximumTemperature": 80.0,
+          "MinimumFanSpeed": 40,
+          "MinimumTemperature": 50.0,
+          "Name": "Front",
+          "OneWayHysteresis": false,
+          "SelectedHysteresis": 2.0,
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/max(CPU, GPU)",
+            "Name": "max(CPU, GPU)",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "NVApiWrapper/256/sensor/0",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/5",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MatchingFanSensor": null,
+        "Name": "System Fan #4",
+        "NickName": "System Fan #4",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/6",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MatchingFanSensor": null,
+        "Name": "System Fan #5",
+        "NickName": "System Fan #5",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/7",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MatchingFanSensor": null,
+        "Name": "System Fan #6",
+        "NickName": "System Fan #6",
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      }
+    ],
+    "CustomSensors": [
+      {
+        "Identifier": "Mix/max(CPU, GPU)",
+        "Name": "max(CPU, GPU)",
+        "SelectedMixFunction": 1,
+        "SelectedSensors": [
+          {
+            "Identifier": "/amdcpu/0/temperature/2",
+            "IsHidden": false,
+            "Name": "Core (Tctl/Tdie)",
+            "NickName": "Core (Tctl/Tdie)"
+          },
+          {
+            "Identifier": "NVApiWrapper/256/sensor/0",
+            "IsHidden": false,
+            "Name": "GPU",
+            "NickName": "GPU"
+          }
+        ]
+      }
+    ],
+    "DisplayTrayIconTemperature": false,
+    "FanCurves": [
+      {
+        "Name": "CPU Sync",
+        "SelectedControl": {
+          "Enable": true,
+          "ForceApply": false,
+          "Identifier": "/lpc/nct6687d/control/0",
+          "IsHidden": false,
+          "ManualControl": false,
+          "ManualControlValue": 0,
+          "MatchingFanSensor": null,
+          "Name": "CPU Fan",
+          "NickName": "CPU Fan 1",
+          "SelectedCommandStepDown": 8.0,
+          "SelectedCommandStepUp": 8.0,
+          "SelectedFanCurve": {
+            "MaximumTemperature": 120,
+            "MinimumTemperature": 20,
+            "Name": "Graph",
+            "OneWayHysteresis": true,
+            "Points": [
+              "20,0",
+              "70,50",
+              "90,100"
+            ],
+            "SelectedHysteresis": 2.0,
+            "SelectedResponseTime": 1,
+            "SelectedTempSource": {
+              "Identifier": "/amdcpu/0/temperature/2",
+              "IsHidden": false,
+              "Name": "Core (Tctl/Tdie)",
+              "NickName": "Core (Tctl/Tdie)"
+            }
+          },
+          "SelectedOffset": 0,
+          "SelectedStart": 0,
+          "SelectedStop": 0
+        },
+        "SelectedOffset": 0
+      },
+      {
+        "MaximumFanSpeed": 100,
+        "MaximumTemperature": 80.0,
+        "MinimumFanSpeed": 40,
+        "MinimumTemperature": 50.0,
+        "Name": "Front",
+        "OneWayHysteresis": false,
+        "SelectedHysteresis": 2.0,
+        "SelectedResponseTime": 1,
+        "SelectedTempSource": {
+          "Identifier": "Mix/max(CPU, GPU)",
+          "Name": "max(CPU, GPU)",
+          "SelectedMixFunction": 1,
+          "SelectedSensors": [
+            {
+              "Identifier": "/amdcpu/0/temperature/2",
+              "IsHidden": false,
+              "Name": "Core (Tctl/Tdie)",
+              "NickName": "Core (Tctl/Tdie)"
+            },
+            {
+              "Identifier": "NVApiWrapper/256/sensor/0",
+              "IsHidden": false,
+              "Name": "GPU",
+              "NickName": "GPU"
+            }
+          ]
+        }
+      },
+      {
+        "MaximumTemperature": 120,
+        "MinimumTemperature": 20,
+        "Name": "Graph",
+        "OneWayHysteresis": true,
+        "Points": [
+          "20,0",
+          "70,50",
+          "90,100"
+        ],
+        "SelectedHysteresis": 2.0,
+        "SelectedResponseTime": 1,
+        "SelectedTempSource": {
+          "Identifier": "/amdcpu/0/temperature/2",
+          "IsHidden": false,
+          "Name": "Core (Tctl/Tdie)",
+          "NickName": "Core (Tctl/Tdie)"
+        }
+      }
+    ],
+    "FanSensors": [
+      {
+        "Identifier": "NVApiWrapper/256/fan/0",
+        "IsHidden": false,
+        "Name": "Fan 1 - NVIDIA GeForce RTX 4080",
+        "NickName": "GPU 1"
+      },
+      {
+        "Identifier": "NVApiWrapper/256/fan/1",
+        "IsHidden": false,
+        "Name": "Fan 2 - NVIDIA GeForce RTX 4080",
+        "NickName": "GPU 2"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/0",
+        "IsHidden": false,
+        "Name": "CPU Fan",
+        "NickName": "CPU Fan"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/1",
+        "IsHidden": false,
+        "Name": "Pump Fan",
+        "NickName": "Pump Fan"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/2",
+        "IsHidden": false,
+        "Name": "System Fan #1",
+        "NickName": "System Fan #1"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/3",
+        "IsHidden": false,
+        "Name": "System Fan #2",
+        "NickName": "System Fan #2"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/4",
+        "IsHidden": false,
+        "Name": "System Fan #3",
+        "NickName": "System Fan #3"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/5",
+        "IsHidden": false,
+        "Name": "System Fan #4",
+        "NickName": "System Fan #4"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/6",
+        "IsHidden": false,
+        "Name": "System Fan #5",
+        "NickName": "System Fan #5"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/7",
+        "IsHidden": false,
+        "Name": "System Fan #6",
+        "NickName": "System Fan #6"
+      }
+    ],
+    "HideFanSpeedCards": true,
+    "HorizontalUIOrientation": false,
+    "PrimaryColor": "#FF607D8B",
+    "SecondaryColor": "#FFAEEA00",
+    "SelectedTheme": "Dark",
+    "SelectedTrayIconColor": "Light",
+    "SelectedTrayIconSensor": {
+      "Identifier": "/amdcpu/0/temperature/2",
+      "IsHidden": false,
+      "Name": "Core (Tctl/Tdie)",
+      "NickName": "Core (Tctl/Tdie)"
+    },
+    "ShowHiddenCards": false,
+    "StartMinimized": true,
+    "SyncThemeWithWindows": true,
+    "TemperatureSensors": []
+  },
+  "Sensors": {
+    "DisabledPlugins": [],
+    "DisableStorageSensors": false,
+    "LibreHardwareMonitorSettings": {
+      "Controller": false,
+      "CPU": true,
+      "GPU": true,
+      "Memory": true,
+      "Motherboard": true,
+      "PSU": false,
+      "Storage": true,
+      "ZeroRPMOverride": false
+    },
+    "NvAPIWrapperSettings": {
+      "Enabled": true,
+      "ZeroRPMOverride": false
+    },
+    "SensorCount": 36
+  }
+}
