@@ -88,9 +88,10 @@
     },
     "network#wifi": {
         "interface": "wlp170s0",
-        "format": "󰈀   {ipaddr}",
+        "format": "",
         "format-wifi": "   {ipaddr}",
-        "format-disconnected": "󰌙   disconnected",
+        "format-disconnected": "",
+        "format-disabled": "",
         "tooltip-format": "{ifname}",
     },
     "pulseaudio": {

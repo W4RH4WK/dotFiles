@@ -72,8 +72,8 @@ for mode in normal locked; do
 	riverctl map $mode None XF86AudioPrev  spawn 'mpc prev'
 	riverctl map $mode None XF86AudioNext  spawn 'mpc next'
 
-	riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
-	riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+	riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set 10%+'
+	riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 10%-'
 done
 
 riverctl border-width 1
@@ -138,7 +138,7 @@ riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:super' 'us(altgr
 
 riverctl input '*Touchpad' tap enabled
 riverctl input '*Touchpad' drag-lock enabled
-riverctl input 'Glorious*' accel-profile flat
+riverctl input '*Glorious*' accel-profile flat
 riverctl xcursor-theme Breeze_Light 32
 
 swaybg --image ~/Pictures/Wallpapers/wallpaper --mode fill &
@@ -151,6 +151,7 @@ nm-applet &
 swayidle -w \
 	lock 'ssh-add -D' \
 	lock swaylock \
+	before-sleep 'ssh-add -D' \
 	before-sleep swaylock &
 
 #wlr-randr --output eDP-1 --scale 1.5 &
