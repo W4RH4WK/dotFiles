@@ -133,8 +133,8 @@ else
 	rivertile -view-padding 4 -outer-padding 0 &
 fi
 
-#riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' 'us(altgr-intl)'
-riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:super' 'us(altgr-intl)'
+riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' 'us(altgr-intl)'
+#riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:super' 'us(altgr-intl)'
 
 riverctl input '*Touchpad' tap enabled
 riverctl input '*Touchpad' drag-lock enabled
