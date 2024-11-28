@@ -1,0 +1,75 @@
+#!/bin/bash
+
+set -eu
+
+readonly DUNSTIFY="dunstify --replace 15113 --urgency LOW"
+
+function volume-notify {
+	local value=$(pamixer --get-volume-human)
+	if [[ "$value" == "muted" ]]; then
+		$DUNSTIFY \
+			--icon /usr/share/icons/breeze-dark/status/24/audio-volume-muted.svg \
+			Volume muted
+	else
+		$DUNSTIFY \
+			--hints int:value:$value \
+			--icon /usr/share/icons/breeze-dark/status/24/audio-volume-high.svg \
+			Volume
+	fi
+}
+
+function brightness-notify {
+	local value=$(brightnessctl --machine-readable info | cut -d, -f4)
+	$DUNSTIFY \
+		--hints int:value:$value \
+		--icon /usr/share/icons/breeze-dark/actions/24/brightness-high.svg \
+		Brightness
+}
+
+function screenshot {
+	local filepath="$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)"
+	mkdir -p "$(dirname "$filepath")"
+	grim "$filepath"
+	$DUNSTIFY --icon "$filepath" Screenshot "$(basename "$filepath")"
+}
+
+case $1 in
+	volume-up)
+		pamixer --increase 5
+		volume-notify
+		;;
+	volume-down)
+		pamixer --decrease 5
+		volume-notify
+		;;
+	volume-mute)
+		pamixer --toggle-mute
+		volume-notify
+		;;
+	brightness-up)
+		brightnessctl set 10%+
+		brightness-notify
+		;;
+	brightness-down)
+		brightnessctl set 10%-
+		brightness-notify
+		;;
+	media)
+		systemctl --user start mpd
+		;;
+	media-play)
+		playerctl play-pause || mpc toggle
+		;;
+	media-previous)
+		playerctl previous || mpc prev
+		;;
+	media-next)
+		playerctl next || mpc next
+		;;
+	print)
+		screenshot
+		;;
+	print-region)
+		slurp | grim -g - - | wl-copy
+		;;
+esac

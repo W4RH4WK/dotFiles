@@ -1,0 +1,10 @@
+#!/bin/bash
+
+riverctl set-focused-tags 1
+riverctl send-layout-cmd wideriver "--ratio 0.5"
+riverctl send-layout-cmd wideriver "--stack even"
+
+thunderbird &
+ferdium &
+discord &
+alacritty --command weechat &
