@@ -76,6 +76,7 @@ riverctl border-width 1
 riverctl background-color 0x121212
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
+riverctl border-color-urgent 0xffcb6b
 
 riverctl set-repeat 50 300
 
