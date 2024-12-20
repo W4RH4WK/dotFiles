@@ -81,11 +81,7 @@ export EDITOR="nvim"
 
 # ------------------------------------------------------------ Aliases
 open() {
-	if [[ -f /etc/wsl.conf ]]; then
-		cmd.exe /C start "$(wslpath -w "$1")"
-	else
-		xdg-open "$1"
-	fi
+	exo-open "$@"
 }
 
 tssh() {
