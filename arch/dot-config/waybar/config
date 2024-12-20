@@ -46,6 +46,7 @@
                 "today": "<b>{}</b>",
             },
         },
+        "on-click": "alacritty --command /bin/bash -c 'cal --year; exec bash'",
     },
     "battery": {
         "states": {
@@ -78,7 +79,7 @@
         "on-click": "alacritty --command bluetuith",
     },
     "network#eth": {
-        "interface": "enp0s13f0u4",
+        "interface": "eth0",
         "format": "󰈀   {ipaddr}",
         "format-ethernet": "󰈀   {ipaddr}",
         "format-linked": "󰈀   {ifname}",
@@ -87,7 +88,7 @@
         "tooltip-format": "{ifname}",
     },
     "network#wifi": {
-        "interface": "wlp170s0",
+        "interface": "wlan0",
         "format": "",
         "format-wifi": "   {ipaddr}",
         "format-disconnected": "",
