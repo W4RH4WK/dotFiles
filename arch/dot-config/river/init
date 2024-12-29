@@ -70,7 +70,7 @@ riverctl map normal Super Tab focus-previous-tags
 
 riverctl map normal Super F toggle-float
 
-riverctl map normal Super+Shift Space toggle-fullscreen
+riverctl map normal Super Space toggle-fullscreen
 
 riverctl border-width 1
 riverctl background-color 0x121212
@@ -92,7 +92,7 @@ if [[ -f /usr/bin/wideriver ]]; then
 	riverctl map normal Super+Shift Bracketleft send-layout-cmd wideriver "--count +1"
 	riverctl map normal Super+Shift Bracketright send-layout-cmd wideriver "--count -1"
 
-	riverctl map normal Super Space send-layout-cmd wideriver "--layout monocle"
+	riverctl map normal Super B send-layout-cmd wideriver "--layout monocle"
 	riverctl map normal Super N send-layout-cmd wideriver "--layout left"
 	riverctl map normal Super+Shift N send-layout-cmd wideriver "--layout wide"
 

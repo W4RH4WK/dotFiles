@@ -39,14 +39,9 @@
         "reverse-direction": true,
     },
     "clock": {
-        "tooltip-format": "<b>{:%Y-%m-%d}</b>\n<tt>{calendar}</tt>",
-        "format-alt": "{:%H:%M}",
-        "calendar": {
-            "format": {
-                "today": "<b>{}</b>",
-            },
-        },
-        "on-click": "alacritty --command /bin/bash -c 'cal --year; exec bash'",
+        "tooltip-format": "{:%Y-%m-%d %a}",
+        "on-click": "alacritty --command calcurse",
+        "on-click-right": "alacritty --command btop",
     },
     "battery": {
         "states": {

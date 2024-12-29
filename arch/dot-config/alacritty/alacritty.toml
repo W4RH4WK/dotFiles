@@ -35,3 +35,6 @@ magenta = "#c792ea"
 red = "#ff5370"
 white = "#ffffff"
 yellow = "#ffcb6b"
+
+[env]
+TERM = "xterm-256color"
