@@ -92,8 +92,6 @@ tosh() {
 	mosh -- "$@" tmux new-session -A -s 0
 }
 
-#alias l="ls -l --classify --color=force --group-directories-first --human-readable"
-#alias ll="l --all"
 alias l="eza -l --group-directories-first --classify"
 alias ll="l --all"
 alias tree="tree -F --dirsfirst"
@@ -144,11 +142,6 @@ if [[ -z "$(pgrep ssh-agent 2>/dev/null)" ]]; then
 	eval $(ssh-agent -a "$SSH_AUTH_SOCK" -s) > /dev/null
 else
 	export SSH_AGENT_PID=$(pgrep ssh-agent)
-fi
-
-# ------------------------------------------------------------ WSL Specific
-if [[ -f /etc/wsl.conf ]]; then
-	export DISPLAY=localhost:0
 fi
 
 # ------------------------------------------------------------ PATH
