@@ -100,6 +100,7 @@ alias fd="fd --hidden --no-ignore"
 alias lg="lazygit"
 alias ts="tig status"
 alias gdb="gdb --quiet"
+alias cal="calcurse"
 
 # ------------------------------------------------------------ Completion
 bind 'set show-all-if-ambiguous on'
