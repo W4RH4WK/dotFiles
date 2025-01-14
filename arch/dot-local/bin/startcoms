@@ -7,4 +7,4 @@ riverctl send-layout-cmd wideriver "--stack even"
 thunderbird &
 ferdium &
 discord &
-alacritty --command weechat &
+#alacritty --command weechat &
