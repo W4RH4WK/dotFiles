@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if nm-online -x; then
+if nm-online --quiet --exit; then
 	calcurse-caldav
 fi
 
