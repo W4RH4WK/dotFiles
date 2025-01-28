@@ -127,6 +127,7 @@ done
 
 riverctl map normal Super Return spawn alacritty
 riverctl map normal Super R spawn bemenu-run
+riverctl map normal Super+Shift R spawn bemenu-run-term
 riverctl map normal Super E spawn thunar
 riverctl map normal Super C spawn qalculate-gtk
 riverctl map normal Super Backslash spawn 'fsearch --new-window'
