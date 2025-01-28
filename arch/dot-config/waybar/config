@@ -41,7 +41,7 @@
     "clock": {
         "tooltip-format": "{:%Y-%m-%d %a}",
         "on-click": "alacritty --command calcurse",
-        "on-click-right": "alacritty --command btop",
+        "on-click-right": "alacritty --command newsraft",
     },
     "battery": {
         "states": {

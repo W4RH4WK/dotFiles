@@ -1,0 +1,8 @@
+sections-menu-paramount-explore true
+item-limit 30
+scrolloff 6
+
+notification-command
+open-in-browser-command exo-open "%l"
+
+bind q quit-hard
