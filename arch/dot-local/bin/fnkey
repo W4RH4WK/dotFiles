@@ -47,11 +47,11 @@ case $1 in
 		volume-notify
 		;;
 	brightness-up)
-		brightnessctl set 10%+
+		brightnessctl --exponent=3 set 10%+
 		brightness-notify
 		;;
 	brightness-down)
-		brightnessctl set 10%-
+		brightnessctl --exponent=3 set 10%-
 		brightness-notify
 		;;
 	media)
