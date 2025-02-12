@@ -12,8 +12,8 @@
         "bluetooth",
         "network#eth",
         "network#wifi",
-        "battery",
         "pulseaudio",
+        "battery",
         "power-profiles-daemon",
         "tray",
         "clock",
@@ -41,7 +41,7 @@
     "clock": {
         "tooltip-format": "{:%Y-%m-%d %a}",
         "on-click": "alacritty --command calcurse",
-        "on-click-right": "alacritty --command newsraft",
+        "on-click-right": "alacritty --command btop",
     },
     "battery": {
         "states": {
