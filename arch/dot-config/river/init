@@ -133,7 +133,7 @@ riverctl map normal Super C spawn qalculate-gtk
 riverctl map normal Super Backslash spawn 'fsearch --new-window'
 riverctl map normal Super U spawn 'dunstctl close'
 riverctl map normal Super+Shift U spawn 'dunstctl history-pop'
-riverctl map normal Super Period spawn 'bemoji --type'
+riverctl map normal Super Period spawn 'bemoji --type --clip --noline'
 
 riverctl map normal None Print spawn 'fnkey print-region'
 riverctl map normal Super Print spawn 'fnkey print'
