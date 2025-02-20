@@ -1,8 +1,15 @@
 sections-menu-paramount-explore true
 item-limit 30
 scrolloff 6
+status-placeholder
 
 notification-command
 open-in-browser-command exo-open "%l"
 
+color-list-item white default
+color-list-feed white default
+color-list-section white default
+
+bind r reload-all
+bind R reload
 bind q quit-hard
