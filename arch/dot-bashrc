@@ -78,6 +78,7 @@ alias vim="nvim"
 alias view="nvim -R"
 alias vimdiff="nvim -d"
 export EDITOR="nvim"
+export MERGETOOL="nvim -d"
 
 # ------------------------------------------------------------ Aliases
 open() {

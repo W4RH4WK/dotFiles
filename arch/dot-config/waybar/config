@@ -106,7 +106,7 @@
             "car": "󰄋",
             "default": ["", "", ""],
         },
-        //"on-click": "pavucontrol",
         "on-click": "alacritty --command pulsemixer",
+        "on-click-right": "fnkey volume-mute",
     }
 }

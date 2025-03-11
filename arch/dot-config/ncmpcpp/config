@@ -1,2 +1,5 @@
 visualizer_data_source = ~/.mpd/visualizer.fifo
 visualizer_output_name = "Visualizer feed"
+
+user_interface = alternative
+display_bitrate = yes

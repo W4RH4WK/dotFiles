@@ -11,7 +11,7 @@ generic-select  SPC
 generic-credits  @ 
 generic-help  ? 
 generic-quit  q Q 
-generic-save  s S ^S 
+generic-save  s S 
 generic-reload  R 
 generic-copy  c 
 generic-paste  p ^V 
@@ -19,15 +19,15 @@ generic-change-view  TAB
 generic-prev-view  KEY_BTAB 
 generic-import  i I 
 generic-export  x X 
-generic-goto  g G 
+generic-goto  g 
 generic-other-cmd  o O 
 generic-config-menu  C 
 generic-redraw  ^R 
 generic-add-appt  ^A 
 generic-add-todo  ^T 
-generic-prev-day  T ^H 
-generic-next-day  t ^L 
-generic-prev-week  W ^K 
+generic-prev-day  T 
+generic-next-day  t 
+generic-prev-week  W 
 generic-next-week  w 
 generic-prev-month  M 
 generic-next-month  m 
@@ -35,7 +35,7 @@ generic-prev-year  Y
 generic-next-year  y 
 generic-scroll-down  ^N 
 generic-scroll-up  ^P 
-generic-goto-today  ^G 
+generic-goto-today  G 
 generic-command  : 
 move-right  l RGT 
 move-left  h LFT 

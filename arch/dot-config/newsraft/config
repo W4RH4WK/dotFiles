@@ -1,4 +1,5 @@
 sections-menu-paramount-explore true
+menu-feed-sorting un-read-desc
 item-limit 30
 scrolloff 6
 status-placeholder
