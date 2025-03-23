@@ -1,0 +1,115 @@
+{
+    // View
+    "debug.toolBarLocation": "docked",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSurroundingLines": 10,
+    "editor.foldingHighlight": false,
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelScrollSensitivity": 3,
+    "editor.smoothScrolling": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.wordWrap": "on",
+    "window.commandCenter": false,
+    "window.density.editorTabHeight": "compact",
+    "window.restoreWindows": "none",
+    "window.title": "${rootName}${separator}${activeEditorShort}",
+    "workbench.colorTheme": "Fruits Modern",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.splitInGroupLayout": "vertical",
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.layoutControl.enabled": false,
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "zenMode.centerLayout": false,
+    "zenMode.fullScreen": false,
+    "zenMode.showTabs": "none",
+
+    // Handling
+    "editor.autoIndent": "brackets",
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false,
+    },
+    "editor.tabCompletion": "onlySnippets",
+    "editor.snippetSuggestions": "none",
+    "editor.unusualLineTerminators": "off",
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "files.autoGuessEncoding": true,
+    "files.eol": "\n",
+    "security.workspace.trust.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+    ],
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+
+    // Copilot
+    "chat.commandCenter.enabled": false,
+
+    // Git
+    "git.autofetch": false,
+    "git.decorations.enabled": false,
+    "git.detectSubmodules": false,
+    "git.enabled": false,
+
+    // Typescript
+    "typescript.check.npmIsInstalled": false,
+
+    // HTML
+    "html.autoClosingTags": false,
+    "html.autoCreateQuotes": false,
+
+    // ------------------------------------------------------------- Extensions
+
+    // Spell
+    "cSpell.enabled": true,
+    "cSpell.language": "en,de",
+    "cSpell.diagnosticLevel": "Hint",
+
+    // C / C++
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.wordBasedSuggestions": "matchingDocuments",
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.wordBasedSuggestions": "matchingDocuments",
+    },
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.dimInactiveRegions": false,
+    // "C_Cpp.intelliSenseEngine": "disabled",
+    "clang-format.fallbackStyle": "Google",
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.ignoreCMakeListsMissing": true,
+
+    // Go
+    "[go]": {
+        "editor.formatOnSave": false
+    },
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+
+    // Todo
+    "todo.timer.statusbar.enabled": false,
+
+    // Blender
+    "blender.executables": [
+        {
+            "path": "C:\\Program Files\\Blender Foundation\\Blender 2.93\\blender.exe",
+            "name": "",
+            "isDebug": false
+        }
+    ],
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    }
+}
