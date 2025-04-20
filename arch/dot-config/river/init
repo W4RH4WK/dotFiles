@@ -35,6 +35,7 @@ riverctl map normal Super Delete spawn 'loginctl lock-session'
 
 riverctl map normal Super Q close
 riverctl map normal Super M zoom
+riverctl map normal Super B toggle-fullscreen
 riverctl map normal Super Space toggle-fullscreen
 
 riverctl map normal Super J focus-view next
@@ -70,8 +71,8 @@ if [[ -f /usr/bin/wideriver ]]; then
 	riverctl map normal Super+Shift Bracketleft send-layout-cmd wideriver "--count +1"
 	riverctl map normal Super+Shift Bracketright send-layout-cmd wideriver "--count -1"
 
-	riverctl map normal Super B send-layout-cmd wideriver "--layout monocle"
 	riverctl map normal Super N send-layout-cmd wideriver "--layout left"
+	riverctl map normal Super Space send-layout-cmd wideriver "--layout monocle"
 	riverctl map normal Super+Shift N send-layout-cmd wideriver "--layout wide"
 
 	riverctl map normal Super Up    send-layout-cmd wideriver "--layout top"
@@ -125,11 +126,11 @@ done
 ##################################################
 # Applications
 
-riverctl map normal Super Return spawn alacritty
-riverctl map normal Super R spawn bemenu-run
-riverctl map normal Super+Shift R spawn bemenu-run-term
-riverctl map normal Super E spawn thunar
-riverctl map normal Super C spawn qalculate-gtk
+riverctl map normal Super Return spawn 'alacritty'
+riverctl map normal Super R spawn 'bemenu-run'
+riverctl map normal Super+Shift R spawn 'bemenu-run-term'
+riverctl map normal Super E spawn 'doublecmd'
+riverctl map normal Super C spawn 'qalculate-gtk'
 riverctl map normal Super Backslash spawn 'fsearch --new-window'
 riverctl map normal Super U spawn 'dunstctl close'
 riverctl map normal Super+Shift U spawn 'dunstctl history-pop'
