@@ -1,16 +1,19 @@
-sections-menu-paramount-explore true
-menu-feed-sorting un-read-desc
+download-max-host-connections 5
 item-limit 30
-scrolloff 6
-status-placeholder
 
 notification-command
 open-in-browser-command exo-open "%l"
 
-color-list-item white default
 color-list-feed white default
+color-list-item white default
 color-list-section white default
+menu-item-sorting unread-desc
+scrolloff 6
+sections-menu-paramount-explore true
+status-placeholder
 
 bind r reload-all
 bind R reload
 bind q quit-hard
+bind m exec mpv "%l"
+bind M exec yt-dlp --paths ~/Downloads --format-sort res:720 "%l"
