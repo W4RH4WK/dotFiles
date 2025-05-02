@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.1.23 gamma" ConfigVersion="15">
+<doublecmd DCVersion="1.1.24 gamma" ConfigVersion="15">
   <Toolbars>
     <MainToolbar>
       <Row>
@@ -158,13 +158,13 @@
   </Toolbars>
   <MainWindow>
     <Position Save="False">
-      <Left>0</Left>
-      <Top>48</Top>
-      <Width>1008</Width>
-      <Height>1423</Height>
+      <Left>32</Left>
+      <Top>32</Top>
+      <Width>800</Width>
+      <Height>600</Height>
       <PixelsPerInch>96</PixelsPerInch>
       <Maximized>False</Maximized>
-      <Splitter>50</Splitter>
+      <Splitter>100</Splitter>
     </Position>
   </MainWindow>
   <Language>
@@ -424,7 +424,7 @@
     <WipePassNumber>1</WipePassNumber>
     <DropReadOnlyFlag>False</DropReadOnlyFlag>
     <ProcessComments>False</ProcessComments>
-    <RenameSelOnlyName>False</RenameSelOnlyName>
+    <RenameSelOnlyName>True</RenameSelOnlyName>
     <ShowCopyTabSelectPanel>False</ShowCopyTabSelectPanel>
     <UseTrash>True</UseTrash>
     <SkipFileOpError>False</SkipFileOpError>
@@ -441,7 +441,7 @@
     <NtfsHourTimeDelay>False</NtfsHourTimeDelay>
     <AutoExtractOpenMask/>
     <SearchDefaultTemplate/>
-    <ProgressKind>0</ProgressKind>
+    <ProgressKind>2</ProgressKind>
     <Confirmations>15</Confirmations>
     <Options>
       <Symlink>0</Symlink>
