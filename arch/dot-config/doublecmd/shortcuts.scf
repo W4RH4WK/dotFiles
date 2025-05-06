@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.1.23 gamma">
+<doublecmd DCVersion="1.1.24 gamma">
   <Hotkeys Version="63">
     <Form Name="Main">
       <Hotkey>
@@ -96,20 +96,12 @@
         <Command>cm_SortBySize</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+Shift+C</Shortcut>
-        <Command>cm_CopyFullNamesToClip</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+Shift+D</Shortcut>
         <Command>cm_ConfigDirHotList</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Ctrl+Shift+H</Shortcut>
         <Command>cm_HorizontalFilePanels</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Shift+Alt+C</Shortcut>
-        <Command>cm_CopyNamesToClip</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Ctrl+Shift+F1</Shortcut>
@@ -371,6 +363,26 @@
       <Hotkey>
         <Shortcut>Ctrl+Shift+E</Shortcut>
         <Command>cm_ContextMenu</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+P</Shortcut>
+        <Command>cm_CmdLinePrev</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+;</Shortcut>
+        <Command>cm_FocusCmdLine</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+N</Shortcut>
+        <Command>cm_CmdLineNext</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Alt+C</Shortcut>
+        <Command>cm_CopyNamesToClip</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Shift+C</Shortcut>
+        <Command>cm_CopyFullNamesToClip</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>
