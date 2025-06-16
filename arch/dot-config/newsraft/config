@@ -16,4 +16,4 @@ bind r reload-all
 bind R reload
 bind q quit-hard
 bind m exec mpv "%l"
-bind M exec yt-dlp --paths ~/Downloads --format-sort res~720,fps~30 "%l"
+bind M exec yt-dlp --output "~/Downloads/%%(channel)s - %%(title)s.%%(ext)s" --format-sort res~720,fps~30 "%l"
