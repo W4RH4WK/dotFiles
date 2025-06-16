@@ -160,7 +160,7 @@
         <Command>cm_RightOpenDrives</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+F5</Shortcut>
+        <Shortcut>Alt+F6</Shortcut>
         <Command>cm_PackFiles</Command>
       </Hotkey>
       <Hotkey>
@@ -168,7 +168,7 @@
         <Command>cm_Search</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+F9</Shortcut>
+        <Shortcut>Alt+F5</Shortcut>
         <Command>cm_ExtractFiles</Command>
       </Hotkey>
       <Hotkey>
