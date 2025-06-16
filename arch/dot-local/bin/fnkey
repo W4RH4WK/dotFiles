@@ -72,4 +72,7 @@ case $1 in
 	print-region)
 		slurp | grim -g - - | wl-copy
 		;;
+	screen-on)
+		wlr-randr --output eDP-1 --on
+		;;
 esac

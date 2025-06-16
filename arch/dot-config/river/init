@@ -8,6 +8,7 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 
 riverctl default-attach-mode below
 riverctl focus-follows-cursor normal
+riverctl set-cursor-warp on-output-change
 
 riverctl rule-add -app-id 'float*' float
 
@@ -141,6 +142,8 @@ riverctl map normal None Print spawn 'fnkey print-region'
 riverctl map normal Super Print spawn 'fnkey print'
 
 for mode in normal locked; do
+	riverctl map $mode Super F9 spawn 'fnkey screen-on'
+
 	riverctl map $mode None XF86AudioRaiseVolume  spawn 'fnkey volume-up'
 	riverctl map $mode None XF86AudioLowerVolume  spawn 'fnkey volume-down'
 	riverctl map $mode None XF86AudioMute         spawn 'fnkey volume-mute'
