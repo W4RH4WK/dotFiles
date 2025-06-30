@@ -81,6 +81,7 @@
         "format-disconnected": "",
         "format-disabled": "",
         "tooltip-format": "{ifname}",
+        "on-click": "alacritty --command nmtui",
     },
     "network#wifi": {
         "interface": "wlan0",
@@ -89,6 +90,7 @@
         "format-disconnected": "",
         "format-disabled": "",
         "tooltip-format": "{ifname}",
+        "on-click": "alacritty --command nmtui",
     },
     "pulseaudio": {
         "format": "{format_source} {icon}   {volume}%",
