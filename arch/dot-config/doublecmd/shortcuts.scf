@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.1.24 gamma">
+<doublecmd DCVersion="1.1.26 gamma">
   <Hotkeys Version="63">
     <Form Name="Main">
       <Hotkey>
@@ -120,10 +120,6 @@
         <Command>cm_OpenDirInNewTab</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Ctrl+\</Shortcut>
-        <Command>cm_ChangeDirToRoot</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+.</Shortcut>
         <Command>cm_ShowSysFiles</Command>
       </Hotkey>
@@ -160,18 +156,6 @@
         <Command>cm_RightOpenDrives</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+F6</Shortcut>
-        <Command>cm_PackFiles</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Alt+F7</Shortcut>
-        <Command>cm_Search</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Alt+F5</Shortcut>
-        <Command>cm_ExtractFiles</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Alt+Del</Shortcut>
         <Command>cm_Wipe</Command>
       </Hotkey>
@@ -188,7 +172,7 @@
         <Command>cm_ViewHistoryNext</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Shift+Alt+F9</Shortcut>
+        <Shortcut>Alt+F8</Shortcut>
         <Command>cm_TestArchive</Command>
       </Hotkey>
       <Hotkey>
@@ -329,10 +313,6 @@
         <Command>cm_ShowTabsList</Command>
       </Hotkey>
       <Hotkey>
-        <Shortcut>Alt+Z</Shortcut>
-        <Command>cm_TargetEqualSource</Command>
-      </Hotkey>
-      <Hotkey>
         <Shortcut>Ctrl+PgUp</Shortcut>
         <Command>cm_PrevTab</Command>
       </Hotkey>
@@ -351,10 +331,6 @@
       <Hotkey>
         <Shortcut>Ctrl+F2</Shortcut>
         <Command>cm_BriefView</Command>
-      </Hotkey>
-      <Hotkey>
-        <Shortcut>Ctrl+Shift+F2</Shortcut>
-        <Command>cm_ThumbnailsView</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Ctrl+Enter</Shortcut>
@@ -383,6 +359,22 @@
       <Hotkey>
         <Shortcut>Ctrl+Shift+C</Shortcut>
         <Command>cm_CopyFullNamesToClip</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>F8</Shortcut>
+        <Command>cm_ExtractFiles</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Shift+F8</Shortcut>
+        <Command>cm_PackFiles</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Shift+F</Shortcut>
+        <Command>cm_Search</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+\</Shortcut>
+        <Command>cm_ChangeDirToRoot</Command>
       </Hotkey>
       <Hotkey>
         <Shortcut>Del</Shortcut>

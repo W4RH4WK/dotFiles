@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.1.24 gamma" ConfigVersion="15">
+<doublecmd DCVersion="1.1.26 gamma" ConfigVersion="15">
   <Toolbars>
     <MainToolbar>
       <Row>
@@ -208,13 +208,13 @@
       <WheelScrollLines>5</WheelScrollLines>
     </Mouse>
     <AutoFillColumns>True</AutoFillColumns>
-    <AutoSizeColumn>1</AutoSizeColumn>
+    <AutoSizeColumn>0</AutoSizeColumn>
     <CustomColumnsChangeAllColumns>False</CustomColumnsChangeAllColumns>
     <BriefViewFileExtAligned>False</BriefViewFileExtAligned>
     <DateTimeFormat>yyyy-MM-dd hh:nn:ss</DateTimeFormat>
     <ColumnsTitleLikeValues>True</ColumnsTitleLikeValues>
     <CutTextToColumnWidth>True</CutTextToColumnWidth>
-    <ExtendCellWidth>True</ExtendCellWidth>
+    <ExtendCellWidth>False</ExtendCellWidth>
     <ShowSystemFiles>False</ShowSystemFiles>
     <ListFilesInThread>True</ListFilesInThread>
     <LoadIconsSeparately>True</LoadIconsSeparately>
@@ -564,6 +564,9 @@
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
   </IgnoreList>
   <DirectoryHotList>
+    <HotDir Name="Desktop" Path="/home/w4rh4wk/Desktop/"/>
+    <HotDir Name="Downloads" Path="/home/w4rh4wk/Downloads/"/>
+    <HotDir Name="git" Path="/home/w4rh4wk/git/"/>
     <HotDir Name="personal" Path="/home/w4rh4wk/Documents/personal"/>
   </DirectoryHotList>
   <Viewer>
@@ -707,7 +710,7 @@
   <HotKeySortOrder>0</HotKeySortOrder>
   <UseEnterToCloseHotKeyEditor>False</UseEnterToCloseHotKeyEditor>
   <LastUsedPacker>zip</LastUsedPacker>
-  <LastDoAnyCommand>cm_ConfigHotKeys</LastDoAnyCommand>
+  <LastDoAnyCommand>cm_CheckSumCalc</LastDoAnyCommand>
   <MarkMaskCaseSensitive>False</MarkMaskCaseSensitive>
   <MarkMaskIgnoreAccents>False</MarkMaskIgnoreAccents>
   <MarkMaskFilterWindows>False</MarkMaskFilterWindows>
@@ -728,7 +731,7 @@
           <Title>Name</Title>
           <Unique>EF573492-9CAB-49E3-A589-0404AD28C858</Unique>
           <FuncString>[DC().GETFILENAME{}]</FuncString>
-          <Width>633</Width>
+          <Width>751</Width>
           <Align>0</Align>
           <Font>
             <Name>Ubuntu</Name>
@@ -744,7 +747,7 @@
           <Title>Size</Title>
           <Unique>F97A0DA7-1370-43B0-BFE5-8F3388133CE4</Unique>
           <FuncString>[DC().GETFILESIZE{}]</FuncString>
-          <Width>70</Width>
+          <Width>68</Width>
           <Align>1</Align>
           <Font>
             <Name>Ubuntu</Name>
@@ -777,7 +780,7 @@
           <Unique>C031FD35-0B9D-41CB-9814-537CD8C0A1B3</Unique>
           <FuncString>[DC().GETFILEATTR{}]</FuncString>
           <Width>167</Width>
-          <Align>0</Align>
+          <Align>1</Align>
           <Font>
             <Name>Ubuntu</Name>
             <Size>12</Size>
