@@ -3,6 +3,11 @@
 ##################################################
 # Settings
 
+readonly border_width=2
+readonly border_color_focused=0x93a1a1
+readonly border_color_unfocused=0x38464b
+readonly border_color_urgent=0xffcb6b
+
 systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
@@ -10,13 +15,11 @@ riverctl default-attach-mode below
 riverctl focus-follows-cursor normal
 riverctl set-cursor-warp on-output-change
 
-riverctl rule-add -app-id 'float*' float
-
-riverctl border-width 1
+riverctl border-width $border_width
 riverctl background-color 0x121212
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
-riverctl border-color-urgent 0xffcb6b
+riverctl border-color-focused $border_color_focused
+riverctl border-color-unfocused $border_color_unfocused
+riverctl border-color-urgent $border_color_urgent
 riverctl xcursor-theme Breeze_Light 32
 
 riverctl set-repeat 50 300
@@ -26,10 +29,15 @@ riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' '
 
 riverctl input '*Touchpad' tap enabled
 riverctl input '*Touchpad' drag-lock enabled
+riverctl input '*G403*' accel-profile flat
 riverctl input '*Glorious*' accel-profile flat
 
 riverctl map normal Super+Shift Delete exit
 riverctl map normal Super Delete spawn 'loginctl lock-session'
+
+riverctl rule-add -app-id 'float*' float
+riverctl rule-add -app-id 'discord' tags $((1<<7))
+riverctl rule-add -app-id 'Ferdium' tags $((1<<8))
 
 ##################################################
 # Window Management
@@ -86,14 +94,14 @@ if [[ -f /usr/bin/wideriver ]]; then
 
 	riverctl default-layout wideriver
 	wideriver \
-		--ratio 0.6 \
 		--stack diminish \
-		--border-width 1 \
-		--inner-gaps 4 \
-		--outer-gaps 4 \
+		--ratio 0.6 \
 		--smart-gaps \
 		--border-width-monocle 0 \
-		--border-width-smart-gaps 0 &
+		--border-width $border_width \
+		--border-width-smart-gaps 0 \
+		--border-color-focused $border_color_focused \
+		--border-color-unfocused $border_color_unfocused &
 else
 	riverctl map normal Super Bracketleft send-layout-cmd rivertile "main-ratio -0.05"
 	riverctl map normal Super Bracketright send-layout-cmd rivertile "main-ratio +0.05"

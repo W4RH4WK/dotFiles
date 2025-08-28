@@ -15,6 +15,7 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
 	export XDG_SESSION_TYPE=wayland
 	export XDG_CURRENT_DESKTOP=river
 
+	export EDITOR="nvim"
 	export BEMENU_OPTS="--fn 'Cascadia Code 14' --ch 32 --hp 16 --border 8 --bdr '#121212' --prompt '>'"
 
 	export PATH="$HOME/.local/bin:$PATH"
