@@ -325,7 +325,7 @@
     </FreeSpaceIndicator>
   </Colors>
   <ToolTips>
-    <ShowToolTipMode>True</ShowToolTipMode>
+    <ShowToolTipMode>False</ShowToolTipMode>
     <ActualToolTipMode>0</ActualToolTipMode>
     <ToolTipHideTimeOut>0</ToolTipHideTimeOut>
     <CustomFields/>
@@ -564,9 +564,9 @@
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
   </IgnoreList>
   <DirectoryHotList>
-    <HotDir Name="Desktop" Path="/home/w4rh4wk/Desktop/"/>
-    <HotDir Name="Downloads" Path="/home/w4rh4wk/Downloads/"/>
-    <HotDir Name="git" Path="/home/w4rh4wk/git/"/>
+    <HotDir Name="Desktop" Path="/home/w4rh4wk/Desktop"/>
+    <HotDir Name="Downloads" Path="/home/w4rh4wk/Downloads"/>
+    <HotDir Name="git" Path="/home/w4rh4wk/git"/>
     <HotDir Name="personal" Path="/home/w4rh4wk/Documents/personal"/>
   </DirectoryHotList>
   <Viewer>
@@ -764,22 +764,6 @@
           <Unique>D17D13FD-18F7-41E3-8F85-95CCFD7DF8B1</Unique>
           <FuncString>[DC().GETFILETIME{}]</FuncString>
           <Width>177</Width>
-          <Align>1</Align>
-          <Font>
-            <Name>Ubuntu</Name>
-            <Size>12</Size>
-            <Style>0</Style>
-            <Quality>0</Quality>
-          </Font>
-          <UseInvertedSelection>False</UseInvertedSelection>
-          <UseInactiveSelColor>False</UseInactiveSelColor>
-          <Overcolor>True</Overcolor>
-        </Column>
-        <Column>
-          <Title>Attr</Title>
-          <Unique>C031FD35-0B9D-41CB-9814-537CD8C0A1B3</Unique>
-          <FuncString>[DC().GETFILEATTR{}]</FuncString>
-          <Width>167</Width>
           <Align>1</Align>
           <Font>
             <Name>Ubuntu</Name>
