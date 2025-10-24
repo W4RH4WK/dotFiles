@@ -1,4 +1,5 @@
 [Default Applications]
+application/epub+zip=org.pwmt.zathura-pdf-mupdf.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
@@ -10,10 +11,11 @@ audio/flac=mpv.desktop;
 image/jpeg=swayimg.desktop
 image/png=swayimg.desktop
 image/svg+xml=swayimg.desktop
-inode/directory=thunar.desktop
+inode/directory=nemo.desktop
 text/calendar=nvim.desktop;
 text/html=firefox.desktop
 text/markdown=nvim.desktop
+text/plain=nvim.desktop
 video/webm=mpv.desktop
 x-scheme-handler/chrome=chromium.desktop
 x-scheme-handler/http=firefox.desktop
@@ -30,7 +32,7 @@ application/xhtml+xml=chromium.desktop;
 image/jpeg=org.xfce.ristretto.desktop;
 image/png=org.xfce.ristretto.desktop;
 image/svg+xml=org.xfce.ristretto.desktop;
-inode/directory=nemo.desktop;dolphin.desktop;
+inode/directory=doublecmd.desktop;thunar.desktop;dolphin.desktop;
 text/html=chromium.desktop;
 x-scheme-handler/http=chromium.desktop;
 x-scheme-handler/https=chromium.desktop;
