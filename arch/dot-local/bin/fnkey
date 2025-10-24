@@ -26,7 +26,7 @@ function brightness-notify {
 		Brightness
 }
 
-function screenshot {
+function save-screenshot {
 	local filepath="$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)"
 	mkdir -p "$(dirname "$filepath")"
 	grim "$filepath"
@@ -66,11 +66,14 @@ case $1 in
 	media-next)
 		playerctl next || mpc next
 		;;
-	print)
-		screenshot
+	screenshot)
+		save-screenshot
 		;;
-	print-region)
+	screenshot-region)
 		slurp | grim -g - - | wl-copy
+		;;
+	screenshot-editor)
+		grim - | satty --filename -
 		;;
 	screen-on)
 		wlr-randr --output eDP-1 --on
