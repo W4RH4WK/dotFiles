@@ -44,7 +44,7 @@ riverctl rule-add -app-id 'Ferdium' tags $((1<<8))
 
 riverctl map normal Super Q close
 riverctl map normal Super M zoom
-riverctl map normal Super B toggle-fullscreen
+riverctl map normal Super F toggle-fullscreen
 riverctl map normal Super Space toggle-fullscreen
 
 riverctl map normal Super J focus-view next
@@ -67,7 +67,7 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
-riverctl map normal Super F toggle-float
+riverctl map normal Super T toggle-float
 riverctl map normal Super+Shift Up snap up 
 riverctl map normal Super+Shift Down snap down 
 riverctl map normal Super+Shift Left snap left 
@@ -140,14 +140,17 @@ riverctl map normal Super R spawn 'bemenu-run'
 riverctl map normal Super+Shift R spawn 'bemenu-run-term'
 riverctl map normal Super E spawn 'doublecmd'
 riverctl map normal Super C spawn 'qalculate-gtk'
-riverctl map normal Super Backslash spawn 'fsearch --new-window'
+#riverctl map normal Super Backslash spawn 'fsearch --new-window'
+riverctl map normal Super Backslash spawn 'bemenu-file'
+riverctl map normal Super+Shift Backslash spawn 'bemenu-file /'
 riverctl map normal Super U spawn 'dunstctl close'
 riverctl map normal Super+Shift U spawn 'dunstctl history-pop'
 riverctl map normal Super Y spawn 'dunstctl context'
 riverctl map normal Super Period spawn 'bemoji --type --clip --noline'
 
-riverctl map normal None Print spawn 'fnkey print-region'
-riverctl map normal Super Print spawn 'fnkey print'
+riverctl map normal None Print spawn 'fnkey screenshot'
+riverctl map normal Super S spawn 'fnkey screenshot-region'
+riverctl map normal Super+Shift S spawn 'fnkey screenshot-editor'
 
 for mode in normal locked; do
 	riverctl map $mode Super F9 spawn 'fnkey screen-on'
@@ -171,6 +174,7 @@ swaybg --image ~/Pictures/Wallpapers/wallpaper --mode fill &
 waybar &
 dunst &
 nm-applet &
+wl-clip-persist --clipboard both &
 #blueman-applet &
 
 swayidle -w \

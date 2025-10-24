@@ -12,10 +12,10 @@
         "bluetooth",
         "network#eth",
         "network#wifi",
-        "pulseaudio",
-        "battery",
-        "power-profiles-daemon",
         "tray",
+        "pulseaudio",
+        "power-profiles-daemon",
+        "battery",
         "clock",
     ],
     "river/tags": {
@@ -41,7 +41,7 @@
     "clock": {
         "tooltip-format": "{:%Y-%m-%d %a}",
         "on-click": "alacritty --command calcurse",
-        "on-click-right": "alacritty --command btop",
+        "on-click-right": "alacritty --command htop",
     },
     "battery": {
         "states": {
@@ -70,13 +70,13 @@
     },
     "bluetooth": {
         "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+        "format-connected-battery": " {device_alias}",
+        "tooltip-format-connected-battery": "Battery {device_battery_percentage}%",
         "on-click": "alacritty --command bluetuith",
     },
     "network#eth": {
         "interface": "eth0",
         "format": "󰈀   {ipaddr}",
-        "format-ethernet": "󰈀   {ipaddr}",
         "format-linked": "󰈀   {ifname}",
         "format-disconnected": "",
         "format-disabled": "",
@@ -85,10 +85,9 @@
     },
     "network#wifi": {
         "interface": "wlan0",
-        "format": "",
-        "format-wifi": "   {ipaddr}",
-        "format-disconnected": "",
-        "format-disabled": "",
+        "format": "   {ipaddr}",
+        "format-disconnected": "   {ifname}",
+        "format-disabled": "   {ifname}",
         "tooltip-format": "{ifname}",
         "on-click": "alacritty --command nmtui",
     },
