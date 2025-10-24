@@ -24,8 +24,9 @@ riverctl xcursor-theme Breeze_Light 32
 
 riverctl set-repeat 50 300
 
-riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' 'us(altgr-intl)'
+#riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:ctrl_modifier' 'us(altgr-intl)'
 #riverctl keyboard-layout -model 'us(altgr-intl)' -options 'caps:super' 'us(altgr-intl)'
+riverctl keyboard-layout -model 'us(altgr-intl)' -options 'compose:caps' 'us(altgr-intl)'
 
 riverctl input '*Touchpad' tap enabled
 riverctl input '*Touchpad' drag-lock enabled
