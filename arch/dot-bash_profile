@@ -3,17 +3,24 @@
 #
 
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-	export ADW_DISABLE_PORTAL=1
-	export QT_QPA_PLATFORM=wayland
-	export QT_QPA_PLATFORMTHEME=kde
+	export GDK_BACKEND="wayland,x11,*"
+	export QT_QPA_PLATFORM="wayland;xcb"
+	#export QT_QPA_PLATFORMTHEME=kde
+	export QT_STYLE_OVERRIDE=kvantum
+	export SDL_VIDEODRIVER=wayland
 	export MOZ_ENABLE_WAYLAND=1
 	export MOZ_WEBRENDER=1
-	export GTK_USE_PORTAL=1
 
-	export _JAVA_AWT_WM_NONREPARENTING=1
+	export ELECTRON_OZONE_PLATFORM_HINT=wayland
+	export OZONE_PLATFORM=wayland
 
 	export XDG_SESSION_TYPE=wayland
-	export XDG_CURRENT_DESKTOP=river
+	export XDG_CURRENT_DESKTOP=wlroots
+
+	#export ADW_DISABLE_PORTAL=1
+	#export GTK_USE_PORTAL=1
+
+	export _JAVA_AWT_WM_NONREPARENTING=1
 
 	export EDITOR="nvim"
 	export BEMENU_OPTS="--fn 'Cascadia Code 14' --ch 32 --hp 16 --border 8 --bdr '#121212' --prompt '>'"
