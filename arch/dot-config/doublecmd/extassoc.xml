@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd DCVersion="1.1.29 gamma">
+  <ExtensionAssociation>
+    <FileType>
+      <Name>localsend</Name>
+      <IconFile>/usr/share/icons/hicolor/128x128/apps/localsend.png</IconFile>
+      <ExtensionList>file|folder</ExtensionList>
+      <Actions>
+        <Action>
+          <Name>Localsend</Name>
+          <Command>localsend</Command>
+          <Params>%p</Params>
+        </Action>
+      </Actions>
+    </FileType>
+  </ExtensionAssociation>
+</doublecmd>
