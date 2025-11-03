@@ -19,7 +19,7 @@ function volume-notify {
 }
 
 function brightness-notify {
-	local value=$(brightnessctl --machine-readable info | cut -d, -f4)
+	local value=$(brightnessctl --exponent=3 --machine-readable info | cut -d, -f4)
 	$DUNSTIFY \
 		--hints int:value:$value \
 		--icon /usr/share/icons/breeze-dark/actions/24/brightness-high.svg \
