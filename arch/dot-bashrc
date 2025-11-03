@@ -74,9 +74,8 @@ export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 
 # ------------------------------------------------------------ Editor
-alias vim="nvim"
+alias e="nvim"
 alias view="nvim -R"
-alias vimdiff="nvim -d"
 export EDITOR="nvim"
 export MERGETOOL="nvim -d"
 
@@ -93,15 +92,16 @@ tosh() {
 	mosh -- "$@" tmux new-session -A -s 0
 }
 
-alias l="eza -l --group-directories-first --classify"
-alias ll="l --all"
-alias tree="tree -F --dirsfirst"
-alias rg="rg --smart-case --hidden --no-ignore"
-alias fd="fd --hidden --no-ignore"
-alias lg="lazygit"
-alias ts="tig status"
-alias gdb="gdb --quiet"
 alias cal="calcurse"
+alias fd="fd --hidden --no-ignore"
+alias gdb="gdb --quiet"
+alias l="eza -l --group-directories-first --classify"
+alias lg="lazygit"
+alias ll="l --all"
+alias rg="rg --smart-case --hidden --no-ignore"
+alias sudo="sudo "
+alias tree="tree -F --dirsfirst"
+alias ts="tig status"
 alias yt="yt-dlp --output \"~/Downloads/%(channel)s - %(title)s.%(ext)s\" --format-sort res~720,fps~30"
 
 # ------------------------------------------------------------ Completion
