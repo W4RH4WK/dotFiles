@@ -2,4 +2,5 @@
 
 set -eu
 
-alacritty --command $(bemenu-run --no-exec)
+cmd=$(bemenu-run --no-exec)
+alacritty --command $cmd

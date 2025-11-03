@@ -23,7 +23,13 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
 	export _JAVA_AWT_WM_NONREPARENTING=1
 
 	export EDITOR="nvim"
-	export BEMENU_OPTS="--fn 'Cascadia Code 14' --ch 32 --hp 16 --border 8 --bdr '#121212' --prompt '>'"
+	export BEMENU_OPTS="--scrollbar autohide \
+		--fixed-height \
+		--no-spacing \
+		--prompt > \
+		--fn 'Cascadia Code 14' \
+		--ch 32 --hp 16 \
+		--border 8 --bdr #121212"
 
 	export PATH="$HOME/.local/bin:$PATH"
 
