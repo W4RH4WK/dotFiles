@@ -79,6 +79,10 @@ window#waybar {
 #network.linked {
   border-bottom-color: @good;
 }
+#network.disabled,
+#network.disconnected {
+  border-bottom-color: @off;
+}
 
 #battery {
   padding: 0 12px;
