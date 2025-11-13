@@ -102,6 +102,7 @@ alias rg="rg --smart-case --hidden --no-ignore"
 alias sudo="sudo "
 alias tree="tree -F --dirsfirst"
 alias ts="tig status"
+alias qr="qrencode --type=UTF8"
 alias yt="yt-dlp --output \"~/Downloads/%(channel)s - %(title)s.%(ext)s\" --format-sort res~720,fps~30"
 
 # ------------------------------------------------------------ Completion
