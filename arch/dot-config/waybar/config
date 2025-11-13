@@ -19,7 +19,7 @@
         "clock",
     ],
     "river/tags": {
-        "tag-labels": ["󰈹", "", "3", "4", "5", "6", "7", "", "󰭹"],
+        "tag-labels": ["󰈹", "2", "3", "4", "5", "6", "󰺻", "", "󰭹"],
     },
     "mpd": {
         "format": "{stateIcon} {artist} - {title}",

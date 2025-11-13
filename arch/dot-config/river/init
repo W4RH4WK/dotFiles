@@ -38,8 +38,9 @@ riverctl map normal Super Delete spawn 'loginctl lock-session'
 
 riverctl rule-add -app-id 'float*' float
 riverctl rule-add -app-id 'qalculate*' float
-riverctl rule-add -app-id 'discord' tags $((1<<7))
-riverctl rule-add -app-id 'ferdium' tags $((1<<8))
+riverctl rule-add -app-id 'thunderbird' tags $((1 << 6))
+riverctl rule-add -app-id 'discord' tags $((1 << 7))
+riverctl rule-add -app-id 'ferdium' tags $((1 << 8))
 
 ##################################################
 # Window Management
