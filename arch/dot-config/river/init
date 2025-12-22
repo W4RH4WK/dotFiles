@@ -38,9 +38,11 @@ riverctl map normal Super Delete spawn 'loginctl lock-session'
 
 riverctl rule-add -app-id 'float*' float
 riverctl rule-add -app-id 'qalculate*' float
-riverctl rule-add -app-id 'thunderbird' tags $((1 << 6))
+riverctl rule-add -app-id 'org.mozilla.Thunderbird' tags $((1 << 6))
 riverctl rule-add -app-id 'discord' tags $((1 << 7))
 riverctl rule-add -app-id 'ferdium' tags $((1 << 8))
+
+riverctl rule-add ssd # server side decorations for borders on all windows
 
 ##################################################
 # Window Management
@@ -158,15 +160,16 @@ riverctl map normal Super+Shift S spawn 'fnkey screenshot-editor'
 for mode in normal locked; do
 	riverctl map $mode Super F9 spawn 'fnkey screen-on'
 
-	riverctl map $mode None XF86AudioRaiseVolume  spawn 'fnkey volume-up'
-	riverctl map $mode None XF86AudioLowerVolume  spawn 'fnkey volume-down'
-	riverctl map $mode None XF86AudioMute         spawn 'fnkey volume-mute'
-	riverctl map $mode None XF86AudioMedia        spawn 'fnkey media'
-	riverctl map $mode None XF86AudioPlay         spawn 'fnkey media-play'
-	riverctl map $mode None XF86AudioPrev         spawn 'fnkey media-previous'
-	riverctl map $mode None XF86AudioNext         spawn 'fnkey media-next'
-	riverctl map $mode None XF86MonBrightnessUp   spawn 'fnkey brightness-up'
-	riverctl map $mode None XF86MonBrightnessDown spawn 'fnkey brightness-down'
+	riverctl map -repeat $mode None XF86MonBrightnessUp   spawn 'swayosd-client --brightness=raise'
+	riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'swayosd-client --brightness=lower'
+	riverctl map -repeat $mode None XF86AudioRaiseVolume  spawn 'swayosd-client --output-volume=raise'
+	riverctl map -repeat $mode None XF86AudioLowerVolume  spawn 'swayosd-client --output-volume=lower'
+
+	riverctl map $mode None XF86AudioMute  spawn 'swayosd-client --output-volume=mute-toggle'
+	riverctl map $mode None XF86AudioMedia spawn 'fnkey media'
+	riverctl map $mode None XF86AudioPlay  spawn 'fnkey media-play'
+	riverctl map $mode None XF86AudioPrev  spawn 'fnkey media-previous'
+	riverctl map $mode None XF86AudioNext  spawn 'fnkey media-next'
 done
 
 ##################################################
@@ -176,14 +179,12 @@ swaybg --image ~/Pictures/Wallpapers/wallpaper --mode fill &
 
 waybar &
 dunst &
+swayosd-server &
 nm-applet &
 wl-clip-persist --clipboard both &
-#blueman-applet &
 
 swayidle -w \
 	lock 'ssh-add -D' \
 	lock swaylock \
 	before-sleep 'ssh-add -D' \
 	before-sleep swaylock &
-
-#wlr-randr --output eDP-1 --scale 1.5 &

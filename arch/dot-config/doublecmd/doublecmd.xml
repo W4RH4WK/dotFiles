@@ -326,7 +326,7 @@
   </Colors>
   <ToolTips>
     <ShowToolTipMode>False</ShowToolTipMode>
-    <ActualToolTipMode>0</ActualToolTipMode>
+    <ActualToolTipMode>1</ActualToolTipMode>
     <ToolTipHideTimeOut>0</ToolTipHideTimeOut>
     <CustomFields/>
   </ToolTips>
@@ -568,6 +568,7 @@
     <HotDir Name="Downloads" Path="/home/w4rh4wk/Downloads"/>
     <HotDir Name="git" Path="/home/w4rh4wk/git"/>
     <HotDir Name="personal" Path="/home/w4rh4wk/Documents/personal"/>
+    <HotDir Name="l46" Path="/home/w4rh4wk/Documents/l46"/>
   </DirectoryHotList>
   <Viewer>
     <PreviewVisible>False</PreviewVisible>
