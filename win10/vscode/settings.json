@@ -1,4 +1,6 @@
 {
+    "update.mode": "manual",
+
     // View
     "debug.toolBarLocation": "docked",
     "editor.cursorBlinking": "solid",
@@ -51,7 +53,7 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
 
     // Copilot
-    "chat.commandCenter.enabled": false,
+    "chat.disableAIFeatures": true,
 
     // Git
     "git.autofetch": false,
