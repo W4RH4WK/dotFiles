@@ -227,4 +227,62 @@ $selected$$end$
 			</Declarations>
 		</Snippet>
 	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Orbis</Title>
+			<Shortcut>orb</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[#if PH3_PLATFORM_ORBIS
+$selected$$end$
+#endif // PH3_PLATFORM_ORBIS]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>name</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Prospero</Title>
+			<Shortcut>pro</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[#if PH3_PLATFORM_PROSPERO
+$selected$$end$
+#endif // PH3_PLATFORM_PROSPERO]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>name</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Porbis</Title>
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[#if PH3_PLATFORM_ORBIS
+$selected$
+#elif PH3_PLATFORM_PROSPERO
+$end$
+#endif // PH3_PLATFORM_]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>name</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
 </CodeSnippets>
