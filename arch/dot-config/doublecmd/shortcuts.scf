@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.1.26 gamma">
-  <Hotkeys Version="63">
+<doublecmd DCVersion="1.2.1 beta">
+  <Hotkeys Version="70">
     <Form Name="Main">
       <Hotkey>
         <Shortcut>F2</Shortcut>
@@ -377,6 +377,38 @@
         <Command>cm_ChangeDirToRoot</Command>
       </Hotkey>
       <Hotkey>
+        <Shortcut>Ctrl+Down</Shortcut>
+        <Command>cm_ShowCmdLineHistory</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+O</Shortcut>
+        <Command>cm_ToggleFullscreenConsole</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Shift+B</Shortcut>
+        <Command>cm_FlatViewSel</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Shift+Enter</Shortcut>
+        <Command>cm_AddPathAndFilenameToCmdLine</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Shift+F7</Shortcut>
+        <Command>cm_AddNewSearch</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+Z</Shortcut>
+        <Command>cm_TargetEqualSource</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Alt+Shift+Enter</Shortcut>
+        <Command>cm_CountDirContent</Command>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+K</Shortcut>
+        <Command>cm_MapNetworkDrive</Command>
+      </Hotkey>
+      <Hotkey>
         <Shortcut>Del</Shortcut>
         <Command>cm_Delete</Command>
         <Control>Files Panel</Control>
@@ -430,6 +462,36 @@
       <Hotkey>
         <Shortcut>Ctrl+`</Shortcut>
         <Command>cm_ChangeDirToHome</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Num+</Shortcut>
+        <Command>cm_MarkMarkAll</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Num+</Shortcut>
+        <Command>cm_MarkPlus</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Num-</Shortcut>
+        <Command>cm_MarkMinus</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Shift+Num-</Shortcut>
+        <Command>cm_UnmarkCurrentExtension</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Num*</Shortcut>
+        <Command>cm_MarkInvert</Command>
+        <Control>Files Panel</Control>
+      </Hotkey>
+      <Hotkey>
+        <Shortcut>Ctrl+Z</Shortcut>
+        <Command>cm_EditComment</Command>
         <Control>Files Panel</Control>
       </Hotkey>
     </Form>
