@@ -2,4 +2,7 @@
 
 set -euo pipefail
 
-slurp | grim -g - - | zbarimg --quiet -
+slurp | grim -g - - |
+	zbarimg --quiet - |
+	tee /dev/stderr |
+	wl-copy
