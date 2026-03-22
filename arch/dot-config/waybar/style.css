@@ -13,32 +13,42 @@
 
 window#waybar {
   background: transparent;
+  /* background: rgb(25, 20, 20) */
 }
 
-#tags {
+#tags,
+#workspaces  {
   margin-left: 12px;
 }
 #clock {
   margin-right: 12px;
 }
 
-#tags button {
+#tags button,
+#workspaces button {
   font-weight: normal;
   padding: 0 12px;
   border-bottom: 2px solid @off;
   opacity: 0.0;
 }
 #tags button:hover,
-#tags button.occupied {
+#tags button.occupied,
+#workspaces button:hover,
+#workspaces button:not(.empty) {
   opacity: 1.0;
 }
-#tags button.focused {
+#tags button.focused,
+#workspaces button.active {
   border-bottom-color: @on;
   opacity: 1.0;
 }
-#tags button.urgent {
+#tags button.urgent,
+#workspaces button.urgent {
   border-bottom-color: @warn;
   opacity: 1.0;
+}
+#workspaces button.active.special {
+  border-bottom-color: @good;
 }
 
 #clock {

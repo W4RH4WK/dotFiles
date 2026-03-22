@@ -37,7 +37,7 @@ riverctl map normal Super+Shift Delete exit
 riverctl map normal Super Delete spawn 'loginctl lock-session'
 
 riverctl rule-add -app-id 'float*' float
-riverctl rule-add -app-id 'qalculate*' float
+riverctl rule-add -app-id '*qalculate*' float
 riverctl rule-add -app-id 'org.mozilla.Thunderbird' tags $((1 << 6))
 riverctl rule-add -app-id 'discord' tags $((1 << 7))
 riverctl rule-add -app-id 'ferdium' tags $((1 << 8))
@@ -50,7 +50,6 @@ riverctl rule-add ssd # server side decorations for borders on all windows
 riverctl map normal Super Q close
 riverctl map normal Super M zoom
 riverctl map normal Super F toggle-fullscreen
-riverctl map normal Super Space toggle-fullscreen
 
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
@@ -86,7 +85,7 @@ if [[ -f /usr/bin/wideriver ]]; then
 	riverctl map normal Super+Shift Bracketright send-layout-cmd wideriver "--count -1"
 
 	riverctl map normal Super N send-layout-cmd wideriver "--layout left"
-	riverctl map normal Super Space send-layout-cmd wideriver "--layout monocle"
+	riverctl map normal Super B send-layout-cmd wideriver "--layout monocle"
 	riverctl map normal Super+Shift N send-layout-cmd wideriver "--layout wide"
 
 	riverctl map normal Super Up    send-layout-cmd wideriver "--layout top"
@@ -141,35 +140,43 @@ done
 # Applications
 
 riverctl map normal Super Return spawn 'alacritty'
-riverctl map normal Super R spawn 'bemenu-run'
-riverctl map normal Super+Shift R spawn 'bemenu-run-term'
-riverctl map normal Super E spawn 'doublecmd'
-riverctl map normal Super C spawn 'qalculate-gtk'
-#riverctl map normal Super Backslash spawn 'fsearch --new-window'
-riverctl map normal Super Backslash spawn 'bemenu-file'
-riverctl map normal Super+Shift Backslash spawn 'bemenu-file /'
-riverctl map normal Super U spawn 'dunstctl close'
-riverctl map normal Super+Shift U spawn 'dunstctl history-pop'
-riverctl map normal Super Y spawn 'dunstctl context'
-riverctl map normal Super Period spawn 'bemoji --type --clip --noline'
+riverctl map normal Super Space spawn 'myshell run'
+riverctl map normal Super+Shift Space spawn 'myshell run_term'
+riverctl map normal Super E spawn 'myshell files'
+riverctl map normal Super+Shift E spawn 'gio open ~/Downloads'
+riverctl map normal Super C spawn 'myshell calc'
+riverctl map normal Super Backslash spawn 'myshell find'
+riverctl map normal Super+Shift Backslash spawn 'myshell find /'
+riverctl map normal Super U spawn 'myshell notify_dismiss'
+riverctl map normal Super+Shift U spawn 'myshell notify_restore'
+riverctl map normal Super Y spawn 'myshell notify_menu'
+riverctl map normal Super Period spawn 'myshell emoji'
 
-riverctl map normal None Print spawn 'fnkey screenshot'
-riverctl map normal Super S spawn 'fnkey screenshot-region'
-riverctl map normal Super+Shift S spawn 'fnkey screenshot-editor'
+riverctl map normal None Print spawn 'myshell screenshot'
+riverctl map normal Super S spawn 'myshell screenshot_region'
+riverctl map normal Super+Shift S spawn 'myshell screenshot_edit'
+
+riverctl map normal Super Grave spawn 'myshell menu'
+riverctl map normal Super+Control A spawn 'myshell audio'
+riverctl map normal Super+Control B spawn 'myshell bluetooth'
+riverctl map normal Super+Control C spawn 'myshell cal'
+riverctl map normal Super+Control M spawn 'myshell music'
+riverctl map normal Super+Control N spawn 'myshell network'
+riverctl map normal Super+Control T spawn 'myshell top'
 
 for mode in normal locked; do
-	riverctl map $mode Super F9 spawn 'fnkey screen-on'
+	riverctl map $mode Super F9 spawn 'myshell screen_on'
 
-	riverctl map -repeat $mode None XF86MonBrightnessUp   spawn 'swayosd-client --brightness=raise'
-	riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'swayosd-client --brightness=lower'
-	riverctl map -repeat $mode None XF86AudioRaiseVolume  spawn 'swayosd-client --output-volume=raise'
-	riverctl map -repeat $mode None XF86AudioLowerVolume  spawn 'swayosd-client --output-volume=lower'
+	riverctl map -repeat $mode None XF86MonBrightnessUp   spawn 'myshell brightness_up'
+	riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'myshell brightness_down'
+	riverctl map -repeat $mode None XF86AudioRaiseVolume  spawn 'myshell audio_up'
+	riverctl map -repeat $mode None XF86AudioLowerVolume  spawn 'myshell audio_down'
 
-	riverctl map $mode None XF86AudioMute  spawn 'swayosd-client --output-volume=mute-toggle'
-	riverctl map $mode None XF86AudioMedia spawn 'fnkey media'
-	riverctl map $mode None XF86AudioPlay  spawn 'fnkey media-play'
-	riverctl map $mode None XF86AudioPrev  spawn 'fnkey media-previous'
-	riverctl map $mode None XF86AudioNext  spawn 'fnkey media-next'
+	riverctl map $mode None XF86AudioMute  spawn 'myshell audio_mute'
+	riverctl map $mode None XF86AudioMedia spawn 'fnkey music'
+	riverctl map $mode None XF86AudioPlay  spawn 'fnkey music_play'
+	riverctl map $mode None XF86AudioPrev  spawn 'fnkey music_prev'
+	riverctl map $mode None XF86AudioNext  spawn 'fnkey music_next'
 done
 
 ##################################################
@@ -178,7 +185,8 @@ done
 swaybg --image ~/Pictures/Wallpapers/wallpaper --mode fill &
 
 waybar &
-dunst &
+#dunst &
+mako &
 swayosd-server &
 nm-applet &
 wl-clip-persist --clipboard both &

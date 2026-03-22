@@ -3,6 +3,7 @@
     "height": 42,
     "spacing": 42,
     "modules-left": [
+		"hyprland/workspaces",
         "river/tags",
         "mpd",
     ],
@@ -18,6 +19,19 @@
         "battery",
         "clock",
     ],
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"1": "󰈹",
+			"8": "󰺻",
+			"9": "󰭹",
+			"scratch": "󰎚"
+		},
+		"persistent-workspaces": {
+			"*": 9,
+		},
+		"show-special": true
+	},
     "river/tags": {
         "tag-labels": ["󰈹", "2", "3", "4", "5", "6", "󰺻", "", "󰭹"],
     },
@@ -31,7 +45,7 @@
             "paused": "",
         },
         "tooltip": false,
-        "on-click": "alacritty --command ncmpcpp",
+        "on-click": "myshell music",
     },
     "tray": {
         "icon-size": 24,
@@ -40,8 +54,8 @@
     },
     "clock": {
         "tooltip-format": "{:%Y-%m-%d %a}",
-        "on-click": "alacritty --command calcurse",
-        "on-click-right": "alacritty --command htop",
+        "on-click": "myshell cal",
+        "on-click-right": "myshell top",
     },
     "battery": {
         "states": {
@@ -72,7 +86,7 @@
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias}",
         "tooltip-format-connected-battery": "Battery {device_battery_percentage}%",
-        "on-click": "alacritty --command bluetuith",
+        "on-click": "myshell bluetooth",
     },
     "network#eth": {
         "interface": "eth0",
@@ -81,7 +95,7 @@
         "format-disconnected": "",
         "format-disabled": "",
         "tooltip-format": "{ifname}",
-        "on-click": "alacritty --command nmtui",
+        "on-click": "myshell network",
     },
     "network#wifi": {
         "interface": "wlan0",
@@ -89,7 +103,7 @@
         "format-disconnected": "   {ifname}",
         "format-disabled": "   {ifname}",
         "tooltip-format": "{ifname}",
-        "on-click": "alacritty --command nmtui",
+        "on-click": "myshell network",
     },
     "pulseaudio": {
         "format": "{format_source} {icon}   {volume}%",
@@ -107,7 +121,7 @@
             "car": "󰄋",
             "default": ["", "", ""],
         },
-        "on-click": "alacritty --command pulsemixer",
-        "on-click-right": "fnkey volume-mute",
+        "on-click": "myshell audio",
+        "on-click-right": "myshell audio_mute",
     }
 }

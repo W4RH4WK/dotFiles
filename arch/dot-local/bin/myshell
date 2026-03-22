@@ -1,0 +1,136 @@
+#!/bin/bash
+
+set -euo pipefail
+
+menu="bemenu --list 8"
+
+############################################################
+# Helpers
+
+ensure_term() {
+	if ! test -t 0; then
+		exec alacritty --command "$0" ${FUNCNAME[1]:4} "$@"
+	fi
+}
+
+ensure_term_hold() {
+	if ! test -t 0; then
+		exec alacritty --hold --command "$0" ${FUNCNAME[1]:4} "$@"
+	fi
+}
+
+list_cmds() {
+	declare -F | awk '$3 ~ /^cmd_/ { sub(/^cmd_/, "", $3); print $3 }'
+}
+
+############################################################
+# Commands
+
+cmd_run() { bemenu-run; }
+cmd_run_term() { alacritty --command $(bemenu-run --no-exec); }
+
+cmd_bluetooth() { ensure_term; bluetuith; }
+cmd_cal() { ensure_term; calcurse; }
+cmd_calc() { qalculate-qt; }
+cmd_emoji() { bemoji --type; }
+cmd_network() { ensure_term; nmtui; }
+cmd_top() { ensure_term; htop; }
+cmd_files() { QT_QPA_PLATFORM=wayland doublecmd "$@"; }
+cmd_colorpicker() { hyprpicker --lowercase-hex --autocopy; }
+
+cmd_chat() { chromium --profile-directory="Profile 1"; }
+
+cmd_audio() { ensure_term; wiremix; }
+cmd_audio_up() { swayosd-client --output-volume=raise; }
+cmd_audio_down() { swayosd-client --output-volume=lower; }
+cmd_audio_mute() { swayosd-client --output-volume=mute-toggle; }
+
+cmd_music() { ensure_term ncmpcpp; }
+cmd_music_play() { playerctl play-pause || mpc toggle; }
+cmd_music_next() { playerctl next || mpc next; }
+cmd_music_prev() { playerctl previous || mpc prev; }
+
+cmd_notify_dismiss() { makoctl dismiss; }
+cmd_notify_restore() { makoctl restore; }
+cmd_notify_menu() { makoctl menu -- $menu; }
+
+cmd_ocr() {
+	ensure_term_hold
+	slurp | grim -g - - |
+		tesseract - - -l eng |
+		tee /dev/stderr |
+		wl-copy
+}
+
+cmd_qr_read() {
+	ensure_term_hold
+	slurp | grim -g - - |
+		zbarimg --quiet - |
+		tee /dev/stderr |
+		wl-copy
+}
+
+cmd_qr_write() { ensure_term_hold; qrencode -r /dev/stdin -t UTF8; }
+
+cmd_wifi_qr_connect() { ensure_term_hold; wifi-qr -s; }
+cmd_wifi_qr_share() { ensure_term_hold; wifi-qr -z; }
+
+cmd_screenshot() {
+	local filepath="$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)"
+	mkdir -p "$(dirname "$filepath")"
+	grim "$filepath"
+	notify-send --icon "$filepath" Screenshot "$(basename "$filepath")"
+}
+
+cmd_screenshot_region() { slurp | grim -g - - | wl-copy; }
+cmd_screenshot_edit() { grim - | satty --filename -; }
+
+cmd_screen_on() { wlr-randr --output eDP-1 --on; }
+cmd_brightness_up() { swayosd-client --brightness=raise; }
+cmd_brightness_down() { swayosd-client --brightness=lower; }
+
+cmd_find() {
+	ensure_term "$@"
+	fd --type file --one-file-system . "${1:-$HOME}" |
+		fzf \
+			--bind 'enter:become(setsid exo-open {})' \
+			--bind 'ctrl-y:execute(wl-copy {})' \
+			--bind 'ctrl-u:execute(wl-copy "$(dirname -- {})")' \
+			--bind 'ctrl-e:execute(nvim {})' \
+			--bind 'ctrl-f:become(gio open "$(dirname -- {})")' \
+			--bind 'ctrl-t:become(setsid --fork alacritty --working-directory "$(dirname -- {})")'
+}
+
+cmd_menu() {
+	cmd=$(list_cmds | $menu)
+	"cmd_$cmd" "$@"
+}
+
+cmd_help() {
+	echo "usage: $0 <command>"
+	echo
+	echo "commands:"
+	for cmd in $(list_cmds); do
+		echo -e "\t$cmd"
+	done
+}
+
+############################################################
+# Dispatch
+
+if [[ $# -eq 0 || "$1" == "-h" || "$1" == "--help" ]]; then
+	cmd_help
+	exit 0
+fi
+
+cmd="cmd_$1"
+
+if ! declare -F "$cmd" >/dev/null; then
+	echo "Unknown command: $1"
+	echo
+	cmd_help
+	exit 1
+fi
+
+shift
+"$cmd" "$@"
