@@ -95,6 +95,7 @@ tosh() {
 alias cal="calcurse"
 alias fd="fd --hidden --no-ignore"
 alias gdb="gdb --quiet"
+alias hd="hexdump -C"
 alias l="eza -l --group-directories-first --classify"
 alias lg="lazygit"
 alias ll="l --all"
@@ -140,13 +141,13 @@ lfcd () {
 bind '"\eo":"lfcd\C-m"'
 
 # ------------------------------------------------------------ SSH Agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/openssh_agent"
-
-if [[ -z "$(pgrep ssh-agent 2>/dev/null)" ]]; then
-	eval $(ssh-agent -a "$SSH_AUTH_SOCK" -s) > /dev/null
-else
-	export SSH_AGENT_PID=$(pgrep ssh-agent)
-fi
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/openssh_agent"
+#
+# if [[ -z "$(pgrep ssh-agent 2>/dev/null)" ]]; then
+# 	eval $(ssh-agent -a "$SSH_AUTH_SOCK" -s) > /dev/null
+# else
+# 	export SSH_AGENT_PID=$(pgrep ssh-agent)
+# fi
 
 # ------------------------------------------------------------ PATH
 # Go
