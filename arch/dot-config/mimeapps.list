@@ -1,5 +1,4 @@
 [Default Applications]
-
 application/epub+zip=com.github.johnfactotum.Foliate.desktop
 application/pdf=okularApplication_pdf.desktop
 application/x-extension-htm=firefox.desktop
@@ -17,7 +16,8 @@ image/svg+xml=org.gnome.Loupe.desktop
 image/tiff=org.gnome.Loupe.desktop
 image/webp=org.gnome.Loupe.desktop
 inode/directory=org.gnome.Nautilus.desktop
-text/calendar=nvim.desktop;
+inode/vnd.kde.service.http=firefox.desktop
+text/calendar=nvim.desktop
 text/html=firefox.desktop
 text/markdown=nvim.desktop
 text/plain=nvim.desktop
@@ -25,6 +25,7 @@ video/webm=mpv.desktop
 x-scheme-handler/chrome=chromium.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+x-scheme-handler/magnet=org.qbittorrent.qbittorrent.desktop
 
 [Added Associations]
 application/pdf=firefox.desktop;
@@ -35,6 +36,5 @@ application/x-extension-xht=chromium.desktop;
 application/x-extension-xhtml=chromium.desktop;
 application/xhtml+xml=chromium.desktop;
 inode/directory=doublecmd.desktop;thunar.desktop;dolphin.desktop;
-text/html=chromium.desktop;
 x-scheme-handler/http=chromium.desktop;
 x-scheme-handler/https=chromium.desktop;
