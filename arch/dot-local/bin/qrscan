@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-slurp | grim -g - - |
-	zbarimg --quiet - |
-	tee /dev/stderr |
-	wl-copy

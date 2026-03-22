@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -eu
-
-cmd=$(bemenu-run --no-exec)
-alacritty --command $cmd
