@@ -2,11 +2,17 @@
 # ~/.bash_profile
 #
 
-if [[ "$(tty)" == "/dev/tty1" ]]; then
+if uwsm check may-start && uwsm select; then
+	exec uwsm start default
+	#exec uwsm start river.desktop
+fi
+
+if [[ "$(tty)" == "/dev/tty2" ]]; then
 	export GDK_BACKEND="wayland,x11,*"
 	export QT_QPA_PLATFORM="wayland;xcb"
+	export QT_QPA_PLATFORMTHEME=qt6ct:qt5ct
 	#export QT_QPA_PLATFORMTHEME=kde
-	export QT_STYLE_OVERRIDE=kvantum
+	#export QT_STYLE_OVERRIDE=kvantum
 	export SDL_VIDEODRIVER=wayland
 	export MOZ_ENABLE_WAYLAND=1
 	export MOZ_WEBRENDER=1
@@ -29,7 +35,8 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
 		--prompt > \
 		--fn 'Cascadia Code 14' \
 		--ch 32 --hp 16 \
-		--border 8 --bdr #121212"
+		--border 8 --bdr #121212" \
+		--scrollbar autohide
 
 	export PATH="$HOME/.local/bin:$PATH"
 
