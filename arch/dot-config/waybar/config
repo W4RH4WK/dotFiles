@@ -45,7 +45,7 @@
             "paused": "",
         },
         "tooltip": false,
-        "on-click": "myshell music",
+        "on-click": "myshell media",
     },
     "tray": {
         "icon-size": 24,

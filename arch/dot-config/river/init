@@ -160,7 +160,7 @@ riverctl map normal Super Grave spawn 'myshell menu'
 riverctl map normal Super+Control A spawn 'myshell audio'
 riverctl map normal Super+Control B spawn 'myshell bluetooth'
 riverctl map normal Super+Control C spawn 'myshell cal'
-riverctl map normal Super+Control M spawn 'myshell music'
+riverctl map normal Super+Control M spawn 'myshell media'
 riverctl map normal Super+Control N spawn 'myshell network'
 riverctl map normal Super+Control T spawn 'myshell top'
 
@@ -173,10 +173,10 @@ for mode in normal locked; do
 	riverctl map -repeat $mode None XF86AudioLowerVolume  spawn 'myshell audio_down'
 
 	riverctl map $mode None XF86AudioMute  spawn 'myshell audio_mute'
-	riverctl map $mode None XF86AudioMedia spawn 'fnkey music'
-	riverctl map $mode None XF86AudioPlay  spawn 'fnkey music_play'
-	riverctl map $mode None XF86AudioPrev  spawn 'fnkey music_prev'
-	riverctl map $mode None XF86AudioNext  spawn 'fnkey music_next'
+	riverctl map $mode None XF86AudioMedia spawn 'fnkey media'
+	riverctl map $mode None XF86AudioPlay  spawn 'fnkey media_play'
+	riverctl map $mode None XF86AudioPrev  spawn 'fnkey media_prev'
+	riverctl map $mode None XF86AudioNext  spawn 'fnkey media_next'
 done
 
 ##################################################

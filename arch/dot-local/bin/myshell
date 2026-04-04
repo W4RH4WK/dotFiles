@@ -26,33 +26,60 @@ list_cmds() {
 ############################################################
 # Commands
 
-cmd_run() { bemenu-run; }
-cmd_run_term() { alacritty --command $(bemenu-run --no-exec); }
+cmd_run() { exec bemenu-run; }
+cmd_run_term() { exec alacritty --command $(bemenu-run --no-exec); }
 
-cmd_bluetooth() { ensure_term; bluetuith; }
-cmd_cal() { ensure_term; calcurse; }
-cmd_calc() { qalculate-qt; }
-cmd_emoji() { bemoji --type; }
-cmd_network() { ensure_term; nmtui; }
-cmd_top() { ensure_term; htop; }
-cmd_files() { QT_QPA_PLATFORM=wayland doublecmd "$@"; }
-cmd_colorpicker() { hyprpicker --lowercase-hex --autocopy; }
+cmd_chat() { exec chromium --profile-directory="Profile 1"; }
 
-cmd_chat() { chromium --profile-directory="Profile 1"; }
+cmd_bluetooth() { ensure_term; exec bluetuith; }
+cmd_cal() { ensure_term; exec calcurse; }
+cmd_calc() { exec qalculate-qt; }
+cmd_colorpicker() { exec hyprpicker --lowercase-hex --autocopy; }
+cmd_emoji() { exec bemoji --type; }
+cmd_files() { QT_QPA_PLATFORM=wayland exec doublecmd "$@"; }
+cmd_network() { ensure_term; exec nmtui; }
+cmd_top() { ensure_term; exec htop; }
 
-cmd_audio() { ensure_term; wiremix; }
+cmd_audio() { ensure_term; exec wiremix; }
 cmd_audio_up() { swayosd-client --output-volume=raise; }
 cmd_audio_down() { swayosd-client --output-volume=lower; }
 cmd_audio_mute() { swayosd-client --output-volume=mute-toggle; }
 
-cmd_music() { ensure_term ncmpcpp; }
-cmd_music_play() { playerctl play-pause || mpc toggle; }
-cmd_music_next() { playerctl next || mpc next; }
-cmd_music_prev() { playerctl previous || mpc prev; }
+cmd_media() { ensure_term; exec ncmpcpp; }
+cmd_media_play() { playerctl play-pause || mpc toggle; }
+cmd_media_next() { playerctl next || mpc next; }
+cmd_media_prev() { playerctl previous || mpc prev; }
+
+cmd_screen_on() { wlr-randr --output eDP-1 --on; }
+cmd_screen_mirror() { wl-mirror eDP-1; }
+cmd_brightness_up() { swayosd-client --brightness=raise; }
+cmd_brightness_down() { swayosd-client --brightness=lower; }
 
 cmd_notify_dismiss() { makoctl dismiss; }
 cmd_notify_restore() { makoctl restore; }
 cmd_notify_menu() { makoctl menu -- $menu; }
+
+cmd_screenshot_region() { slurp | grim -g - - | wl-copy; }
+cmd_screenshot_edit() { grim - | exec satty --filename -; }
+cmd_screenshot() {
+	local filepath="$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)"
+	mkdir -p "$(dirname "$filepath")"
+	grim "$filepath"
+	notify-send --icon "$filepath" Screenshot "$(basename "$filepath")"
+}
+
+cmd_find() {
+	ensure_term "$@"
+	fd --type file --one-file-system . "${1:-$HOME}" |
+		fzf --layout=reverse \
+			--footer="^O Edit   ^F Open Dir   ^T Open Term   ^Y Copy   ^U Copy Dir" \
+			--bind 'enter:become(setsid exo-open {})' \
+			--bind 'ctrl-o:execute(nvim {})' \
+			--bind 'ctrl-f:become(gio open "$(dirname -- {})")' \
+			--bind 'ctrl-t:become(setsid --fork alacritty --working-directory "$(dirname -- {})")' \
+			--bind 'ctrl-y:execute(wl-copy {})' \
+			--bind 'ctrl-u:execute(wl-copy "$(dirname -- {})")'
+}
 
 cmd_ocr() {
 	ensure_term_hold
@@ -74,33 +101,6 @@ cmd_qr_write() { ensure_term_hold; qrencode -r /dev/stdin -t UTF8; }
 
 cmd_wifi_qr_connect() { ensure_term_hold; wifi-qr -s; }
 cmd_wifi_qr_share() { ensure_term_hold; wifi-qr -z; }
-
-cmd_screenshot() {
-	local filepath="$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S.png)"
-	mkdir -p "$(dirname "$filepath")"
-	grim "$filepath"
-	notify-send --icon "$filepath" Screenshot "$(basename "$filepath")"
-}
-
-cmd_screenshot_region() { slurp | grim -g - - | wl-copy; }
-cmd_screenshot_edit() { grim - | satty --filename -; }
-
-cmd_screen_on() { wlr-randr --output eDP-1 --on; }
-cmd_screen_mirror() { wl-mirror eDP-1; }
-cmd_brightness_up() { swayosd-client --brightness=raise; }
-cmd_brightness_down() { swayosd-client --brightness=lower; }
-
-cmd_find() {
-	ensure_term "$@"
-	fd --type file --one-file-system . "${1:-$HOME}" |
-		fzf \
-			--bind 'enter:become(setsid exo-open {})' \
-			--bind 'ctrl-y:execute(wl-copy {})' \
-			--bind 'ctrl-u:execute(wl-copy "$(dirname -- {})")' \
-			--bind 'ctrl-e:execute(nvim {})' \
-			--bind 'ctrl-f:become(gio open "$(dirname -- {})")' \
-			--bind 'ctrl-t:become(setsid --fork alacritty --working-directory "$(dirname -- {})")'
-}
 
 cmd_menu() {
 	cmd=$(list_cmds | $menu)
