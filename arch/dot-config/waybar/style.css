@@ -34,20 +34,20 @@ window#waybar {
 #tags button:hover,
 #tags button.occupied,
 #workspaces button:hover,
-#workspaces button:not(.empty) {
+#workspaces button:not(.empty).hosting-monitor {
   opacity: 1.0;
 }
 #tags button.focused,
-#workspaces button.active {
+#workspaces button.visible.hosting-monitor {
   border-bottom-color: @on;
   opacity: 1.0;
 }
 #tags button.urgent,
-#workspaces button.urgent {
+#workspaces button.urgent.hosting-monitor {
   border-bottom-color: @warn;
   opacity: 1.0;
 }
-#workspaces button.active.special {
+#workspaces button.active.special.hosting-monitor {
   border-bottom-color: @good;
 }
 
