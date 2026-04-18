@@ -33,7 +33,7 @@ cmd_chat() { exec chromium --profile-directory="Profile 1"; }
 
 cmd_bluetooth() { ensure_term; exec bluetuith; }
 cmd_cal() { ensure_term; exec calcurse; }
-cmd_calc() { exec qalculate-qt; }
+cmd_calc() { exec qalculate-gtk; }
 cmd_colorpicker() { exec hyprpicker --lowercase-hex --autocopy; }
 cmd_emoji() { exec bemoji --type; }
 cmd_files() { QT_QPA_PLATFORM=wayland exec doublecmd "$@"; }

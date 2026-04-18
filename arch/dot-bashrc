@@ -74,14 +74,16 @@ export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 
 # ------------------------------------------------------------ Editor
-alias e="nvim"
+alias vim="nvim"
 alias view="nvim -R"
 export EDITOR="nvim"
 export MERGETOOL="nvim -d"
 
+bind '"\ei":"vim "'
+
 # ------------------------------------------------------------ Aliases
 open() {
-	exo-open "$@"
+	exo-open "${@:-.}" &>/dev/null
 }
 
 tssh() {
@@ -95,7 +97,7 @@ tosh() {
 alias cal="calcurse"
 alias fd="fd --hidden --no-ignore"
 alias gdb="gdb --quiet"
-alias hd="hexdump -C"
+alias hd="hexdump --canonical --no-squeezing"
 alias l="eza -l --group-directories-first --classify"
 alias lg="lazygit"
 alias ll="l --all"
@@ -105,6 +107,7 @@ alias tree="tree -F --dirsfirst"
 alias ts="tig status"
 alias qr="qrencode --type=UTF8"
 alias yt="yt-dlp --output \"~/Downloads/%(channel)s - %(title)s.%(ext)s\" --format-sort res~720,fps~30"
+alias term="setsid alacritty"
 
 # ------------------------------------------------------------ Completion
 bind 'set show-all-if-ambiguous on'

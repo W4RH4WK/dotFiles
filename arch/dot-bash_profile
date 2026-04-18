@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-if uwsm check may-start && uwsm select; then
+if uwsm check may-start -q && uwsm select; then
 	exec uwsm start default
 	#exec uwsm start river.desktop
 fi
