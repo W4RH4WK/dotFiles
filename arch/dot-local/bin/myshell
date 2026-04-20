@@ -31,11 +31,11 @@ cmd_run_term() { exec alacritty --command $(bemenu-run --no-exec); }
 
 cmd_chat() { exec chromium --profile-directory="Profile 1"; }
 
-cmd_bluetooth() { ensure_term; exec bluetuith; }
+cmd_bluetooth() { ensure_term; exec bluetui; }
 cmd_cal() { ensure_term; exec calcurse; }
 cmd_calc() { exec qalculate-gtk; }
 cmd_colorpicker() { exec hyprpicker --lowercase-hex --autocopy; }
-cmd_emoji() { exec bemoji --type; }
+cmd_emoji() { exec bemoji --type --clip --noline; }
 cmd_files() { QT_QPA_PLATFORM=wayland exec doublecmd "$@"; }
 cmd_network() { ensure_term; exec nmtui; }
 cmd_top() { ensure_term; exec htop; }
@@ -67,6 +67,9 @@ cmd_screenshot() {
 	grim "$filepath"
 	notify-send --icon "$filepath" Screenshot "$(basename "$filepath")"
 }
+
+cmd_screenkey() { exec showmethekey-gtk --keys-win --no-app-win --no-clickable; }
+cmd_screenrec() { exec kooha; }
 
 cmd_find() {
 	ensure_term "$@"
