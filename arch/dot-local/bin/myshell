@@ -33,7 +33,7 @@ cmd_chat() { exec chromium --profile-directory="Profile 1"; }
 
 cmd_bluetooth() { ensure_term; exec bluetui; }
 cmd_cal() { ensure_term; exec calcurse; }
-cmd_calc() { exec qalculate-gtk; }
+cmd_calc() { exec qalculate-qt; }
 cmd_colorpicker() { exec hyprpicker --lowercase-hex --autocopy; }
 cmd_emoji() { exec bemoji --type --clip --noline; }
 cmd_files() { QT_QPA_PLATFORM=wayland exec doublecmd "$@"; }
@@ -49,6 +49,9 @@ cmd_media() { ensure_term; exec ncmpcpp; }
 cmd_media_play() { playerctl play-pause || mpc toggle; }
 cmd_media_next() { playerctl next || mpc next; }
 cmd_media_prev() { playerctl previous || mpc prev; }
+
+cmd_mpd_start() { systemctl --user start mpd; }
+cmd_mpd_stop() { systemctl --user stop mpd; }
 
 cmd_screen_on() { wlr-randr --output eDP-1 --on; }
 cmd_screen_mirror() { wl-mirror eDP-1; }
@@ -78,7 +81,7 @@ cmd_find() {
 			--footer="^O Edit   ^F Open Dir   ^T Open Term   ^Y Copy   ^U Copy Dir" \
 			--bind 'enter:become(setsid exo-open {})' \
 			--bind 'ctrl-o:execute(nvim {})' \
-			--bind 'ctrl-f:become(gio open "$(dirname -- {})")' \
+			--bind 'ctrl-f:become(setsid exo-open "$(dirname -- {})")' \
 			--bind 'ctrl-t:become(setsid --fork alacritty --working-directory "$(dirname -- {})")' \
 			--bind 'ctrl-y:execute(wl-copy {})' \
 			--bind 'ctrl-u:execute(wl-copy "$(dirname -- {})")'
